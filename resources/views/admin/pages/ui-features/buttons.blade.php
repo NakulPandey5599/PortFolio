@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Skydash Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../assets/vendors/feather/feather.css">
-    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/feather/feather.css">
+    <link rel="stylesheet" href="../../assets/vendor/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/vendor/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/mdi/css/materialdesignicons.min.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -111,113 +111,92 @@
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:../../partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-  <ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link" href="../../index.html">
-        <i class="icon-grid menu-icon"></i>
-        <span class="menu-title">Dashboard</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-        <i class="icon-layout menu-icon"></i>
-        <span class="menu-title">UI Elements</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="ui-basic">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-          <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-          <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-        <i class="icon-columns menu-icon"></i>
-        <span class="menu-title">Form elements</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="form-elements">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Basic Elements</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-        <i class="icon-bar-graph menu-icon"></i>
-        <span class="menu-title">Charts</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="charts">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-        <i class="icon-grid-2 menu-icon"></i>
-        <span class="menu-title">Tables</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="tables">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Basic table</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-        <i class="icon-contract menu-icon"></i>
-        <span class="menu-title">Icons</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="icons">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../../pages/icons/mdi.html">Mdi icons</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <i class="icon-head menu-icon"></i>
-        <span class="menu-title">User Pages</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="auth">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-          <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-        <i class="icon-ban menu-icon"></i>
-        <span class="menu-title">Error pages</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="error">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
-          <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="../../../docs/documentation.html">
-        <i class="icon-paper menu-icon"></i>
-        <span class="menu-title">Documentation</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+        @include('admin.partials._sidebar')
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <h4 class="card-title">Single color buttons</h4>
+                        <p class="card-description">Add class <code>.btn-{color}</code> for buttons in theme colors</p>
+                        <div class="template-demo">
+                          <button type="button" class="btn btn-primary">Primary</button>
+                          <button type="button" class="btn btn-secondary">Secondary</button>
+                          <button type="button" class="btn btn-success">Success</button>
+                          <button type="button" class="btn btn-danger">Danger</button>
+                          <button type="button" class="btn btn-warning">Warning</button>
+                          <button type="button" class="btn btn-info">Info</button>
+                          <button type="button" class="btn btn-light">Light</button>
+                          <button type="button" class="btn btn-dark">Dark</button>
+                          <button type="button" class="btn btn-link">Link</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <h4 class="card-title">Rounded buttons</h4>
+                        <p class="card-description">Add class <code>.btn-rounded</code></p>
+                        <div class="template-demo">
+                          <button type="button" class="btn btn-primary btn-rounded btn-fw">Primary</button>
+                          <button type="button" class="btn btn-secondary btn-rounded btn-fw">Secondary</button>
+                          <button type="button" class="btn btn-success btn-rounded btn-fw">Success</button>
+                          <button type="button" class="btn btn-danger btn-rounded btn-fw">Danger</button>
+                          <button type="button" class="btn btn-warning btn-rounded btn-fw">Warning</button>
+                          <button type="button" class="btn btn-info btn-rounded btn-fw">Info</button>
+                          <button type="button" class="btn btn-light btn-rounded btn-fw">Light</button>
+                          <button type="button" class="btn btn-dark btn-rounded btn-fw">Dark</button>
+                          <button type="button" class="btn btn-link btn-rounded btn-fw">Link</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <h4 class="card-title">Outlined buttons</h4>
+                        <p class="card-description">Add class <code>.btn-outline-{color}</code> for outline buttons</p>
+                        <div class="template-demo">
+                          <button type="button" class="btn btn-outline-primary btn-fw">Primary</button>
+                          <button type="button" class="btn btn-outline-secondary btn-fw">Secondary</button>
+                          <button type="button" class="btn btn-outline-success btn-fw">Success</button>
+                          <button type="button" class="btn btn-outline-danger btn-fw">Danger</button>
+                          <button type="button" class="btn btn-outline-warning btn-fw">Warning</button>
+                          <button type="button" class="btn btn-outline-info btn-fw">Info</button>
+                          <button type="button" class="btn btn-outline-light btn-fw">Light</button>
+                          <button type="button" class="btn btn-outline-dark btn-fw">Dark</button>
+                          <button type="button" class="btn btn-link btn-fw">Link</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <h4 class="card-title">Inverse buttons</h4>
+                        <p class="card-description">Add class <code>.btn-inverse-{color} for inverse buttons</code></p>
+                        <div class="template-demo">
+                          <button type="button" class="btn btn-inverse-primary btn-fw">Primary</button>
+                          <button type="button" class="btn btn-inverse-secondary btn-fw">Secondary</button>
+                          <button type="button" class="btn btn-inverse-success btn-fw">Success</button>
+                          <button type="button" class="btn btn-inverse-danger btn-fw">Danger</button>
+                          <button type="button" class="btn btn-inverse-warning btn-fw">Warning</button>
+                          <button type="button" class="btn btn-inverse-info btn-fw">Info</button>
+                          <button type="button" class="btn btn-inverse-light btn-fw">Light</button>
+                          <button type="button" class="btn btn-inverse-dark btn-fw">Dark</button>
+                          <button type="button" class="btn btn-link btn-fw">Link</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
@@ -235,7 +214,7 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/vendor/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
@@ -245,7 +224,5 @@
     <script src="../../assets/js/settings.js"></script>
     <script src="../../assets/js/todolist.js"></script>
     <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
   </body>
 </html>
