@@ -44,7 +44,7 @@ class AdminController extends Controller
     }  
 
     public function register(){
-        return view('admin.pages.samples.register');
+        return view('admin.auth.register');
     }  
     public function error_404(){
         return view('admin.pages.samples.error_404');

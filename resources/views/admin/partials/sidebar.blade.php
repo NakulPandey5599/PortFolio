@@ -26,12 +26,12 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html"
+                    <a class="nav-link" href="/profile/create"
                       >Add</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html"
+                    <a class="nav-link" href="/profile/edit"
                       >Edit</a
                     >
                   </li>

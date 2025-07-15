@@ -15,7 +15,7 @@ class AuthController extends Controller
         return view('/admin.home.index');
     }
 
-    function forms(){
-        return view('admin.pages.forms.basic_elements');
+    function register(){
+        return view('admin.auth.register');
     }
 }

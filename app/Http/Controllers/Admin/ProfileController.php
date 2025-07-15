@@ -11,6 +11,7 @@ class ProfileController extends Controller
         
     }
     function create() {
+        return view('admin.pages.profile.add');
         
     }
     function store(Request $request) {
