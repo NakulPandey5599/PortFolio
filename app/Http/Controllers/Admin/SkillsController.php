@@ -11,6 +11,7 @@ class SkillsController extends Controller
         
     }
     function create() {
+        return view ('admin.pages.skills.add');
         
     }
     function store(Request $request) {

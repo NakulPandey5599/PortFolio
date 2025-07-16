@@ -15,6 +15,17 @@ class ProfileController extends Controller
         
     }
     function store(Request $request) {
+        $formFields= $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'gender'=>'required',
+            'image'=>['required','image','mimes:jpg,jpeg,png','max:2048'],
+            'github'=>'required|url',
+            'linkedin'=>'required|url',
+            'location'=>'required',
+            'description'=>'required',
+        ]);
+                
         
     }
     function edit($id) {
