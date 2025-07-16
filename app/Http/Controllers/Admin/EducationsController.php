@@ -11,6 +11,7 @@ class EducationsController extends Controller
         
     }
     function create() {
+        return view ('admin.pages.education.add');
         
     }
     function store(Request $request) {
