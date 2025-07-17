@@ -37,9 +37,9 @@ Route::prefix('admin')->group(function () {
     Route::prefix('/profile')->group(function (){
         Route::get('/', [ProfileController::class, 'index']);
         Route::get('/create', [ProfileController::class, 'create']);
-        Route::post('/store', [ProfileController::class, 'store']);
-        Route::put('/edit{id}', [ProfileController::class, 'edit']);
-        Route::post('/update', [ProfileController::class, 'update']);
+        Route::post('/store', [ProfileController::class, 'store'])->name('profile.store');
+        Route::get('/edit/{profile}', [ProfileController::class, 'edit']);
+        Route::put('/update/{profile}', [ProfileController::class, 'update'])->name('profile.update');
     });
 
 
@@ -57,8 +57,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/', [ProjectsController::class, 'index']);
         Route::get('/create', [ProjectsController::class, 'create']);
         Route::post('/store', [ProjectsController::class, 'store']);
-        Route::put('/edit/{id}', [ProjectsController::class, 'edit']);
-        Route::post('/update', [ProjectsController::class, 'update']);
+        Route::get('/edit/{id}', [ProjectsController::class, 'edit']);
+        Route::put('/update', [ProjectsController::class, 'update']);
     });
 
      Route::prefix('/education')->group(function (){
