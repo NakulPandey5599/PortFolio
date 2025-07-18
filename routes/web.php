@@ -38,7 +38,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', [ProfileController::class, 'index']);
         Route::get('/create', [ProfileController::class, 'create']);
         Route::post('/store', [ProfileController::class, 'store'])->name('profile.store');
-        Route::get('/edit/{profile}', [ProfileController::class, 'edit']);
+        Route::get('/edit', [ProfileController::class, 'edit']);
         Route::put('/update/{profile}', [ProfileController::class, 'update'])->name('profile.update');
     });
 
@@ -47,26 +47,26 @@ Route::prefix('admin')->group(function () {
     Route::prefix('/skills')->group(function (){
         Route::get('/', [SkillsController::class, 'index']);
         Route::get('/create', [SkillsController::class, 'create']);
-        Route::post('/store', [SkillsController::class, 'store']);
-        Route::put('/edit/{id}', [SkillsController::class, 'edit']);
-        Route::post('/update', [SkillsController::class, 'update']);
+        Route::post('/store', [SkillsController::class, 'store'])->name('skills.store');
+        Route::get('/edit/{education}', [SkillsController::class, 'edit'])->name('skills.edit');
+        Route::put('/update/{education}', [SkillsController::class, 'update'])->name('skills.update');
 
     });
 
     Route::prefix('/project')->group(function (){
-        Route::get('/', [ProjectsController::class, 'index']);
-        Route::get('/create', [ProjectsController::class, 'create']);
-        Route::post('/store', [ProjectsController::class, 'store']);
-        Route::get('/edit/{id}', [ProjectsController::class, 'edit']);
-        Route::put('/update', [ProjectsController::class, 'update']);
+        Route::get('/', [ProjectsController::class, 'index'])->name('project.show');
+        Route::get('/create', [ProjectsController::class, 'create'])->name('project.create');
+        Route::post('/store', [ProjectsController::class, 'store'])->name('project.store');
+        Route::get('/edit/{project}', [ProjectsController::class, 'edit'])->name('project.edit');;
+        Route::put('/update', [ProjectsController::class, 'update'])->name('project.update');
     });
 
      Route::prefix('/education')->group(function (){
         Route::get('/', [EducationsController::class, 'index']);
         Route::get('/create', [EducationsController::class, 'create']);
-        Route::post('/store', [EducationsController::class, 'store']);
-        Route::put('/edit/{id}', [EducationsController::class, 'edit']);
-        Route::post('/update', [EducationsController::class, 'update']);
+        Route::post('/store', [EducationsController::class, 'store'])->name('education.store');
+        Route::put('/edit/{id}', [EducationsController::class, 'edit'])->name('education.edit');
+        Route::post('/update', [EducationsController::class, 'update'])->name('education.update');
     });
     Route::get('typography', [AdminController::class, 'typography']);
 });

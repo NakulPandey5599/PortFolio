@@ -7,9 +7,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Add Your Skills Here</h4>
-                            <form action="{{ route('skills.store') }}" method="POST">
+                            <form action="{{ route('skills.update', $skills->id )}}" method="POST">
                                 @csrf
-
+                                @method("PUT")
                                 <div class="form-group">
                                     <label for="exampleInputUsername1">Skill Name</label>
                                     <input type="text" class="form-control" name="skill_name" id="exampleInputUsername1"
