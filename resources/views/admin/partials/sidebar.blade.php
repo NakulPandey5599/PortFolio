@@ -7,47 +7,49 @@
             </a>
         </li>
         <li class="nav-item">
-    <a class="nav-link" data-bs-toggle="collapse" href="#profileMenu" aria-expanded="false" aria-controls="profileMenu">
-        <i class="icon-layout menu-icon"></i>
-        <span class="menu-title">Profile</span>
-        <i class="menu-arrow"></i>
-    </a>
-    <div class="collapse" id="profileMenu">
-        <ul class="nav flex-column sub-menu">
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/profile">Show</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/profile/create">Add</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/profile/edit">Edit</a>
-            </li>
-        </ul>
-    </div>
-</li>
+            <a class="nav-link" data-bs-toggle="collapse" href="#profileMenu" aria-expanded="false"
+                aria-controls="profileMenu">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Profile</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="profileMenu">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/profile">Show</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/profile/create">Add</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/profile/edit">Edit</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
 
-<li class="nav-item">
-    <a class="nav-link" data-bs-toggle="collapse" href="#projectMenu" aria-expanded="false" aria-controls="projectMenu">
-        <i class="icon-layout menu-icon"></i>
-        <span class="menu-title">Project</span>
-        <i class="menu-arrow"></i>
-    </a>
-    <div class="collapse" id="projectMenu">
-        <ul class="nav flex-column sub-menu">
-            <li class="nav-item">
-                <a class="nav-link" href="/projects/">Show</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/project/create">Add</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/project/edit">Edit</a>
-            </li>
-        </ul>
-    </div>
-</li>
-<li class="nav-item">
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#projectMenu" aria-expanded="false"
+                aria-controls="projectMenu">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Project</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="projectMenu">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('project.show')}}" >Show</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('project.create')}}">Add</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/project/edit">Edit</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                 aria-controls="ui-basic">
                 <i class="icon-layout menu-icon"></i>
@@ -98,7 +100,8 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false"
+                aria-controls="tables">
                 <i class="icon-grid-2 menu-icon"></i>
                 <span class="menu-title">Tables</span>
                 <i class="menu-arrow"></i>
@@ -112,7 +115,8 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+            <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false"
+                aria-controls="icons">
                 <i class="icon-contract menu-icon"></i>
                 <span class="menu-title">Icons</span>
                 <i class="menu-arrow"></i>

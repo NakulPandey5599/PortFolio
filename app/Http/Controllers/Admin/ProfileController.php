@@ -8,11 +8,16 @@ use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
 {
-    function index() {}
+    function index( ) {
+        $profile = Profile::first();
+        return view('admin.pages.profile.show', ['profile' => $profile] );
+    }
+    
     function create()
     {
         return view('admin.pages.profile.add');
     }
+    
     function store(Request $request)
     {
         $formFields = $request->validate([
@@ -31,8 +36,9 @@ class ProfileController extends Controller
         Profile::create($formFields);
         return redirect('/admin/home')->with('success', 'Profile created successfully!');
     }
-    function edit(Profile $profile)
+    function edit()
     {
+        $profile = Profile::first();
         return view('admin.pages.profile.edit', ['profile' => $profile]);
     }
     function update(Request $request, Profile $profile)
@@ -48,18 +54,14 @@ class ProfileController extends Controller
             'description' => 'required',
         ]);
 
+        if ($request->hasFile('image')) {
+            $formFields['image'] = $request->file('image')->store('uploads', 'public');
+        } else {
+            unset($formFields['image']);
+        }
 
-
-       if($request->hasFile('image') ){     
-       $formFields['image'] = $request->file('image')->store('uploads', 'public');
-    }else{
-        unset($formFields['image']);
-    }
-       
-
-
-        
         $profile->update($formFields);
+        
         return redirect('/admin/home')->with('success', 'Profile updated successfully!');
     }
 }
