@@ -45,11 +45,11 @@ Route::prefix('admin')->group(function () {
 
     //Skills Route
     Route::prefix('/skills')->group(function (){
-        Route::get('/', [SkillsController::class, 'index']);
-        Route::get('/create', [SkillsController::class, 'create']);
+        Route::get('/', [SkillsController::class, 'index'])->name('skills.show');
+        Route::get('/create', [SkillsController::class, 'create'])->name('skills.create');
         Route::post('/store', [SkillsController::class, 'store'])->name('skills.store');
-        Route::get('/edit/{education}', [SkillsController::class, 'edit'])->name('skills.edit');
-        Route::put('/update/{education}', [SkillsController::class, 'update'])->name('skills.update');
+        Route::get('/edit/{id}', [SkillsController::class, 'edit'])->name('skills.edit');
+        Route::put('/update', [SkillsController::class, 'update'])->name('skills.update');
 
     });
 
@@ -57,7 +57,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', [ProjectsController::class, 'index'])->name('project.show');
         Route::get('/create', [ProjectsController::class, 'create'])->name('project.create');
         Route::post('/store', [ProjectsController::class, 'store'])->name('project.store');
-        Route::get('/edit/{project}', [ProjectsController::class, 'edit'])->name('project.edit');;
+        Route::get('/edit', [ProjectsController::class, 'edit'])->name('project.edit');;
         Route::put('/update', [ProjectsController::class, 'update'])->name('project.update');
     });
 

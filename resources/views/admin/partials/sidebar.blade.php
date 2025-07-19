@@ -43,9 +43,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('project.create')}}">Add</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin/project/edit">Edit</a>
-                    </li>
                 </ul>
             </div>
         </li>
@@ -66,6 +63,24 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+         <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#skills" aria-expanded="false"
+                aria-controls="skills">
+                <i class="icon-grid-2 menu-icon"></i>
+                <span class="menu-title">Skills</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="skills">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('skills.show')}}">Show</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('skills.create')}}">Add</a>
                     </li>
                 </ul>
             </div>

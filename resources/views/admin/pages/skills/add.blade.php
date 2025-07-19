@@ -15,6 +15,16 @@
                                     <input type="text" class="form-control" name="skill_name" id="exampleInputUsername1"
                                         placeholder="e.g., Laravel" />
                                 </div>
+                                
+                                <div class="form-group">
+                                    <label for="level">Categories</label>
+                                    <select name="categories" id="level" class="form-control">
+                                        <option value="">Select Categories</option>
+                                        <option value="0">Frontend</option>
+                                        <option value="1">Backend</option>
+                                        <option value="2">Tools</option>
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="level">Skill Level</label>
                                     <select name="level" id="level" class="form-control">
@@ -29,12 +39,7 @@
                                     <input type="number" name="experience_years" id="experience_years" class="form-control"
                                         min="0" max="50" placeholder="e.g., 2">
                                 </div>
-                                <div class="form-group">
-                                    <label for="description">Skill Description</label>
-                                    <textarea name="description" id="description" class="form-control" rows="3"
-                                        placeholder="Brief description (optional)"></textarea>
-
-                                </div>
+                                
                                 <div class="form-check">
 
                                 </div>
