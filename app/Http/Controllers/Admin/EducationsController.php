@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 class EducationsController extends Controller
 {
     function index() {
+        $educations = Education::all();
+        return view('admin.pages.education.show',['education'=>$educations]);
+        
         
     }
     function create() {
@@ -16,22 +19,28 @@ class EducationsController extends Controller
         
     }
     function store(Request $request) {
-        
-        $formFields = $request->validate([
+        try {
+            $formFields = $request->validate([
             'degree' => 'required',
-            'instituiton' => 'required',
-            'start_years' => 'required',
+            'institution' => 'required',
+            'start_year' => 'required',
             'end_year' => 'required',
             'grade'=>'required',
             'description'=>'required'
         ]);
 
         Education::create($formFields);
-
+         
         return redirect('/admin/home')->with('success', 'education add successfully!');
         
+        } catch (\Throwable $th) {
+            return $th;
+        }
+        
     }
-    function edit($id) {
+    function edit($education_id) {
+        $education = Education::where('id', $education_id)->first();
+        return view('admin.pages.education.edit',['education'=>$education]);
         
     }
     function update(Request $request ) {
@@ -44,9 +53,9 @@ class EducationsController extends Controller
             'description'=>'required'
         ]);
 
-        $Education->update($formFields);
+      Education::where('id', $request->education_id)->update($formFields);
 
-        return redirect('/admin/home')->with('success', 'ehucation updated successfully!');
+        return redirect('/admin/home')->with('success', 'education updated successfully!');
         
     }
 }

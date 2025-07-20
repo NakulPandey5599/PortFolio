@@ -3,7 +3,7 @@
           <div
             class="card-body card-body-padding px-3 d-flex align-items-center justify-content-between"
           >
-            <div>
+            {{-- <div>
               <div class="d-flex align-items-center justify-content-between">
                 <p class="mb-0 font-weight-medium me-3 buy-now-text">
                   Free 24/7 customer support, updates, and more with this
@@ -16,7 +16,7 @@
                   >Buy Now</a
                 >
               </div>
-            </div>
+            </div> --}}
             <div class="d-flex align-items-center justify-content-between">
               <a
                 href="https://www.bootstrapdash.com/product/skydash-admin-template/"

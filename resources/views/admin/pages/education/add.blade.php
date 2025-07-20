@@ -9,7 +9,7 @@
                             <h4 class="card-title">Add Your Degree and Certification Here</h4>
                             <form class="forms-sample"action="{{ route('education.store') }}" method="POST">
                                 @csrf
-                                >
+                                
                                 <div class="form-group">
                                     <label for="degree">Degree / Certification</label>
                                     <input type="text" name="degree" id="degree" class="form-control"
