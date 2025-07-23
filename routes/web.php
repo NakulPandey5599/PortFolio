@@ -10,19 +10,24 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Auth\Events\Login;
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/index', function () {
-    return view('home');
-});
-
-Route::get('/home', [PageController::class, 'home'])->name('home');
+// Route::get('/index', function () {
+//     return view('home');
+// });
+// Route::get('/', [PageController::class, 'welcome'])->name('welcome');
+Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/resume', [PageController::class, 'resume'])->name('resume');
-Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
+Route::get('/projects', [PageController::class, 'projects'])->name('projects');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/browsepdf', [PageController::class, 'pdfinbrowser'])->name('pdfinbrowser');
+Route::get('/downloadpdf', [PageController::class, 'downloadpdf'])->name('downloadpdf');
+Route::get('/test', [PageController::class, 'test'])->name('test');
+
 
 //admin route
 // Route::get('/admin', [AdminController::class, 'index'])->name('index');
@@ -68,26 +73,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', [EducationsController::class, 'edit'])->name('education.edit');
         Route::put('/update', [EducationsController::class, 'update'])->name('education.update');
     });
-    Route::get('typography', [AdminController::class, 'typography']);
-});
-
-Route::prefix('ui-features')->group(function () {
-    Route::get('buttons', [AdminController::class, 'buttons']);
-    Route::get('dropdowns', [AdminController::class, 'dropdowns']);
-    Route::get('typography', [AdminController::class, 'typography']);
-});
-
-     Route::get('/forms/basic_elements', [AdminController::class, 'basic_elements'])->name('basic_elements');
-     Route::get('/charts/chartjs', [AdminController::class, 'chartjs'])->name('chartjs');
-     Route::get('tables/basic_table', [AdminController::class, 'basic_table'])->name('basic_table');
-     Route::get('/icons/mdi', [AdminController::class, 'mdi'])->name('mdi');
-
-    Route::prefix('samples')->group(function(){
-
-       Route::get('login',[AdminController::class, 'login'])->name('login');
-       Route::get('register',[AdminController::class, 'register'])->name('register');
-       Route::get('error_404',[AdminController::class, 'error_404'])->name('error_404');
-       Route::get('error_500',[AdminController::class, 'error_500'])->name('error_500');
-        
-    });
     
+});
+

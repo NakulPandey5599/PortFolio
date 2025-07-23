@@ -12,7 +12,7 @@ class ProjectsController extends Controller
 {
     function index() {
         $projects = Project::all();
-        return view('admin.pages.projects.show', ['projects' => $projects] );
+        return view('admin.pages.projects.show', compact('projects') );
         
     }
     function create() {

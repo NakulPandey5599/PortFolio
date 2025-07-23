@@ -80,7 +80,11 @@
                                       <input type="text" class="form-control" id="exampleInputCity1" name="location"
                                           placeholder="Location" required>
                                   </div>
-
+                                  <div class="form-group">
+                                      <label for="exampleInputName2">Tagline</label>
+                                      <input type="text" class="form-control" id="exampleInputName2" name="tagline"
+                                          placeholder="tagline" required>
+                                  </div>
                                   <div class="form-group">
                                       <label for="exampleTextarea1">Description</label>
                                       <textarea class="form-control" id="exampleTextarea1" name="description" rows="4" required></textarea>
