@@ -28,6 +28,7 @@ class ProfileController extends Controller
             'github' => 'required|url',
             'linkedin' => 'required|url',
             'location' => 'required',
+            'tagline' => 'required',
             'description' => 'required',
         ]);
 
