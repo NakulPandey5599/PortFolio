@@ -48,21 +48,23 @@ class PageController extends Controller
     }
     
     public function pdfinbrowser(){
-        $pdf = Pdf::loadView('users.pages.resume');
-    return $pdf->stream('resume.pdf');
+        $pdf = Pdf::loadView('users.pages.test');
+         $pdf->setPaper([0, 0, 612, 1200], 'portrait'); 
+        return $pdf->stream('resume.pdf');
     }
 
         
     public function downloadpdf(){
-        $pdf = Pdf::loadView('users.pages.resume');
+        $pdf = Pdf::loadView('users.pages.test');
     return $pdf->download('downloadedresume.pdf');
     }
 
     function test(){
-        // return view('users.pages.test')
-         $pdf = Pdf::loadView('users.pages.test');
-         return $pdf->stream('resume.pdf');
-    }
+        return view('users.pages.test');
+        
+    //      $pdf = Pdf::loadView('users.pages.test');
+    //      return $pdf->stream('resume.pdf');
+     }
 
     
 
