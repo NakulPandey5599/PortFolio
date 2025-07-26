@@ -24,6 +24,10 @@
                                             
                                         <tr>
                                             <td>{{ $project->title }}</td>
+                                            <td>{{ $project->technologies-used }}</td>
+                                            <td>{{ $project->project-overview }}</td>
+                                            <td>{{ $project->Challenges }}</td>
+                                            <td>{{ $project->solution }}</td>
                                             <td>{{ $project->description }}</td>
                                             <td> <img src="{{ asset('storage/' . $project->image) }}" alt="photo"
                                                     style="width: 150px; height: 100px; object-fit: cover; border-radius: 0;">

@@ -27,6 +27,7 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/browsepdf', [PageController::class, 'pdfinbrowser'])->name('pdfinbrowser');
 Route::get('/downloadpdf', [PageController::class, 'downloadpdf'])->name('downloadpdf');
 Route::get('/test', [PageController::class, 'test'])->name('test');
+Route::get('/project-details', [PageController::class, 'project_details'])->name('project_details');
 
 
 //admin route

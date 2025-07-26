@@ -37,7 +37,7 @@
                                         <p>{{ Str::words($project->description, 20, '...') }}</p>
                                     </div>
                                     <div class="card-links">
-                                        <a href="#" class="link-item">
+                                        <a href="{{route('project_details')}}" class="link-item">
                                             Learn More
                                             <i class="bi bi-arrow-right"></i>
                                         </a>
