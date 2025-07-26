@@ -16,8 +16,38 @@
                                     <input type="hidden" name="project_id" value="{{$project->id}}"/>
                                     <label for="exampleInputName1">Title</label>
                                     <input type="text" class="form-control" id="exampleInputName1" name='title'
-                                        value=" {{$project->title}}" placeholder="Name" />
+                                        value=" {{$project->title}}" placeholder="Title" />
                                 </div>
+                                 <div class="form-group">
+                                    <label for="technologies-used">Technologies-Used (Comma Separated)</label>
+                                    <input type="text" class="form-control" id="technologies-used"
+                                        name='technologies-used'  value=" {{$project->technologies-used}}" placeholder="e.g: laravel,React,etc" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="project-overview">Project Overview</label>
+                                    <input type="text" class="form-control" id="project-overview" name='project-overview'
+                                        value=" {{$project->project-overview}}"  placeholder="Provide a brief summary of the project and its purpose" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="challenges">Challenges</label>
+                                    <input type="text" class="form-control" id="challenges" name='challenges'
+                                        value=" {{$project->challenges}}"  placeholder="Mention a key challenge you faced during the project" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="solution">Solution</label>
+                                    <input type="text" class="form-control" id="solution" name='solution'
+                                        value=" {{$project->solution}}"  placeholder="Explain the solution you implemented to address the challenge" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="solution">key Feature</label>
+                                    <ul class="list-unstyled" class="form-control" id="featuresList">
+                                        <li><input type="text" class="form-control" name="key_features[]"  value=" {{$project->key_features}}"  placeholder="e.g., Integrated payment gateway"></li>  
+                                    </ul>
+                                    <button type="button" class="btn btn-inverse-primary btn-fw" onclick="addFeature()"> Add Feature</button>
+                                    
+
+
+
                                 <div class="form-group">
                                     <label for="exampleTextarea1">Description</label>
                                     <textarea class="form-control" id="exampleTextarea1" name='description' rows="4">{{ old('description', $project->description) }}</textarea>
@@ -37,7 +67,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>File upload</label>
-                                    <input type="file" name="image" class="file-upload-default" />
+                                    <input type="file" name="image[]" class="file-upload-default" />
 
                                     
                                     <div class="input-group col-xs-12 d-flex align-items-center">

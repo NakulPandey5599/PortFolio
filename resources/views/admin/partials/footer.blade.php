@@ -22,3 +22,11 @@
     <script src="{{asset('assets/js/dashboard.js')}}"></script>
     <!-- <script src="{{asset('assets/js/Chart.roundedBarCharts.js')}}"></script> -->
     <!-- End custom js for this page-->
+    <script>
+    function addFeature() {
+      const ul = document.getElementById('featuresList');
+      const li = document.createElement('li');
+      li.innerHTML = `<input type="text" class="form-control"  name="features[]" placeholder="Enter feature">`;
+      ul.appendChild(li);
+    }
+  </script>

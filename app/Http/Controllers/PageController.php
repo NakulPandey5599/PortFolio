@@ -64,9 +64,12 @@ class PageController extends Controller
         
     //      $pdf = Pdf::loadView('users.pages.test');
     //      return $pdf->stream('resume.pdf');
-     }
+    }
 
-    
+    public function project_details(){
+        return view('users.pages.project_details');
+    }
+
 
 
 

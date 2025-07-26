@@ -21,23 +21,44 @@ class ProjectsController extends Controller
     }
 
     function store(Request $request) {
-
-
+     try {
+        
          $formFields = $request->validate([
             'title' => 'required',
             'image' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
+            'images.*' => 'image|mimes:jpg,jpeg,png|max:2048',
             'github' => 'required|url',
             'live_link' => 'required|url',
             'description' => 'required',
+            'key_features' => 'required|array',
+            'key_features.*' => 'nullable|string|max:255',
+            'technologies-used' => 'nullable|string',
+            'project-overview' => 'nullable|string|max:500',
+            'challenges' => 'nullable|string|max:500',
+            'solution' => 'nullable|string|max:500',
         ]);
 
         $formFields['image'] = $request->file('image')->store('uploads', 'public');
+        // Multiple images
+        if ($request->hasFile('images')) {
+            $multiImagePaths = [];
+            foreach ($request->file('images') as $image) {
+                $multiImagePaths[] = $image->store('uploads', 'public');
+            }
+            $formFields['images'] = $multiImagePaths;
+        }
+        $formFields['technologies-used'] = explode(',', $request->input('technologies-used'));
 
         Project::create($formFields);
 
         return redirect('/admin/home')->with('success', 'project created successfully!');
         
+        
+     } catch (\Throwable $th) {
+         return $th;
+     }
     }
+
     function edit($project_id) {
 
         $project = Project::where('id', $project_id)->first();
@@ -51,10 +72,17 @@ class ProjectsController extends Controller
         try {
             $formFields = $request->validate([
                'title' => 'required',
-               'image' => ['image', 'mimes:jpg,jpeg,png', 'max:2048'],
+               'image' => ['image', 'nullable','mimes:jpg,jpeg,png', 'max:2048'],
+               'images.*' => 'image|mimes:jpg,jpeg,png|max:2048',
                'github' => 'required|url',
                'live_link' => 'required|url',
                'description' => 'required',
+               'key_features' => 'required|array',
+               'key_features.*' => 'nullable|string|max:255',
+               'technologies-used' => 'nullable|string',
+               'project-overview' => 'nullable|string|max:500',
+               'challenges' => 'nullable|string|max:500',
+               'solution' => 'nullable|string|max:500',
            ]);
            
            if($request->hasFile('image')){ 
@@ -62,13 +90,21 @@ class ProjectsController extends Controller
            }else{
                unset($formFields['image']);
            }
-   
-           Project::where('id', $request->project_id)->update($formFields);
-   
-           return redirect('/admin/home')->with('success', 'project created successfully!');
-        } catch (\Throwable $th) {
-            return $th;
+   if ($request->hasFile('images')) {
+        $multiImagePaths = [];
+        foreach ($request->file('images') as $image) {
+            $multiImagePaths[] = $image->store('uploads', 'public');
         }
+        $formFields['images'] = $multiImagePaths;
+   }
+   $formFields['technologies-used'] = explode(',', $request->input('technologies-used'));
+
+   Project::where('id', $request->project_id)->update($formFields);
+
+   return redirect('/admin/home')->with('success', 'project created successfully!');
+} catch (\Throwable $th) {
+    return $th;
+}
 
         
     }
