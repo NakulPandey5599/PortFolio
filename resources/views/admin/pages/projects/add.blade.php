@@ -19,11 +19,11 @@
                                 <div class="form-group">
                                     <label for="technologies-used">Technologies-Used (Comma Separated)</label>
                                     <input type="text" class="form-control" id="technologies-used"
-                                        name='technologies-used' placeholder="e.g: laravel,React,etc" />
+                                        name='technologies_used' placeholder="e.g: laravel,React,etc" />
                                 </div>
                                 <div class="form-group">
                                     <label for="project-overview">Project Overview</label>
-                                    <input type="text" class="form-control" id="project-overview" name='project-overview'
+                                    <input type="text" class="form-control" id="project-overview" name='project_overview'
                                         placeholder="Provide a brief summary of the project and its purpose" />
                                 </div>
                                 <div class="form-group">
@@ -54,15 +54,8 @@
                                     <textarea class="form-control" id="exampleTextarea1" name='description' rows="4"></textarea>
                                 </div>
                                 <div class="form-group">
-                                     <label for="images">Select multiple images:</label><br><br>
-  <input type="file" id="images" name="img[]"  class="file-upload-default" accept="image/*" multiple>
-  <br><br>
-  <button type="submit">Upload</button> 
                                 </div>
-                                <div class="form-group">
-
-                                </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label>File upload</label>
                                     <input type="file" name="image" class="file-upload-default" />
                                     <div class="input-group col-xs-12 d-flex align-items-center">
@@ -74,10 +67,17 @@
                                             </button>
                                         </span>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
-                                    <label for="images">Upload images</label>
-                                    <input type="file" name="images[]" class="form-control" multiple>
+                                    <label>Project Images</label>
+                                    <ul class="list-unstyled" id="imageList">
+                                        <li>
+                                            <input type="file" name="images[]" class="form-control mb-2"
+                                                accept="image/*" />
+                                        </li>
+                                    </ul>
+                                    <button type="button" class="btn btn-inverse-primary btn-fw"
+                                        onclick="addImageInput()">Add Photo</button>
                                 </div>
 
                                 <div class="form-group">

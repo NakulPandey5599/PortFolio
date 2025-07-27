@@ -65,6 +65,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/store', [ProjectsController::class, 'store'])->name('project.store');
         Route::get('/edit/{id}', [ProjectsController::class, 'edit'])->name('project.edit');;
         Route::put('/update', [ProjectsController::class, 'update'])->name('project.update');
+        Route::delete('/delete/{id}', [ProjectsController::class, 'destroy'])->name('project.destroy');
     });
 
      Route::prefix('/education')->group(function (){
