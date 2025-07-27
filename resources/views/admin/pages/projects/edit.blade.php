@@ -21,12 +21,12 @@
                                  <div class="form-group">
                                     <label for="technologies-used">Technologies-Used (Comma Separated)</label>
                                     <input type="text" class="form-control" id="technologies-used"
-                                        name='technologies-used'  value=" {{$project->technologies-used}}" placeholder="e.g: laravel,React,etc" />
+                                        name='technologies_used'  value=" {{$project->technologies_used}}" placeholder="e.g: laravel,React,etc" />
                                 </div>
                                 <div class="form-group">
                                     <label for="project-overview">Project Overview</label>
-                                    <input type="text" class="form-control" id="project-overview" name='project-overview'
-                                        value=" {{$project->project-overview}}"  placeholder="Provide a brief summary of the project and its purpose" />
+                                    <input type="text" class="form-control" id="project-overview" name='project_overview'
+                                        value=" {{$project->project_overview}}"  placeholder="Provide a brief summary of the project and its purpose" />
                                 </div>
                                 <div class="form-group">
                                     <label for="challenges">Challenges</label>

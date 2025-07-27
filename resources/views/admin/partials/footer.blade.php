@@ -30,3 +30,11 @@
       ul.appendChild(li);
     }
   </script>
+  <script>
+    function addImageInput() {
+        const imageList = document.getElementById('imageList');
+        const newInput = document.createElement('li');
+        newInput.innerHTML = `<input type="file" name="images[]" class="form-control mb-2" accept="image/*" />`;
+        imageList.appendChild(newInput);
+    }
+</script>

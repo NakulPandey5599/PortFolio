@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-                $table->json('technologies-used')->nullable(); 
-                $table->json('key_features')->nullable();
-                $table->string('project-overview');
+                $table->json('technologies_used')->default(json_encode([])); 
+                $table->json('key_features')->default(json_encode([]));
+                $table->string('project_overview');
                 $table->string('challenges');
                 $table->string('solution');
 
