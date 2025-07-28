@@ -43,20 +43,22 @@ class PageController extends Controller
 
     public function resume(){
         $project = Project::all();
-         $skills = Skills::all();
-        return view('users.pages.resume',compact('skills','project'));
+        $skills = Skills::all();
+        $profile = Profile::first();
+        $educations = Education::all();
+        return view('users.pages.resume',compact('skills','project','profile','educations'));
     }
     
     public function pdfinbrowser(){
-        $pdf = Pdf::loadView('users.pages.test');
+        $pdf = Pdf::loadView('users.pages.resume');
          $pdf->setPaper([0, 0, 612, 1200], 'portrait'); 
         return $pdf->stream('resume.pdf');
     }
 
         
     public function downloadpdf(){
-        $pdf = Pdf::loadView('users.pages.test');
-    return $pdf->download('downloadedresume.pdf');
+        $pdf = Pdf::loadView('users.pages.resume');
+        return $pdf->download('downloadedresume.pdf');
     }
 
     function test(){
@@ -66,8 +68,11 @@ class PageController extends Controller
     //      return $pdf->stream('resume.pdf');
     }
 
-    public function project_details(){
-        return view('users.pages.project_details');
+    public function project_details($project_id){
+         
+            $project = Project::find($project_id);
+
+        return view('users.pages.project_details',compact('project'));
     }
 
 

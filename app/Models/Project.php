@@ -9,7 +9,7 @@ class Project extends Model
 {
      protected $casts = [
     'key_features' => 'array',
-    'technologies-used' => 'array',
+    'technologies_used' => 'array',
      'images' => 'array',
 ];
 
