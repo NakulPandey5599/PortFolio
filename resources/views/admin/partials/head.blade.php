@@ -24,7 +24,7 @@
     />
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <!-- <link rel="stylesheet" href="{{asset('assets/vendor/datatables.net-bs4/dataTables.bootstrap4.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('assets/vendor/datatables.net-bs4/dataTables.bootstrap4.css')}}"> -->
     <link
       rel="stylesheet"
       href="{{asset('assets/vendor/datatables.net-bs5/dataTables.bootstrap5.css')}}"

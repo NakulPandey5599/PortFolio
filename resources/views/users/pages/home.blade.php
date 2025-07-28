@@ -79,7 +79,7 @@
             <!-- Section Title -->
             <div class="container section-title">
                 <h2>About</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <p>"I’m a developer who believes in writing clean code, building meaningful products, and always staying curious."</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -108,24 +108,24 @@
                             <div class="skills-grid">
                                 <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
                                     <div class="skill-icon">
-                                        <i class="bi bi-palette"></i>
+                                        <i class="bi bi-window"></i>
                                     </div>
-                                    <h4>UI/UX Design</h4>
-                                    <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar</p>
+                                    <h4>Frontend Dev</h4>
+                                    <p>I craft visually appealing, responsive interfaces with a focus on usability and performance.</p>
                                 </div>
                                 <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
                                     <div class="skill-icon">
                                         <i class="bi bi-code-slash"></i>
                                     </div>
-                                    <h4>Frontend Dev</h4>
-                                    <p>Sed porttitor lectus nibh. Cras ultricies ligula sed magna</p>
+                                    <h4>Backend Dev</h4>
+                                    <p>I build secure, scalable systems that power dynamic web experiences behind the scenes.</p>
                                 </div>
                                 <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
                                     <div class="skill-icon">
-                                        <i class="bi bi-camera"></i>
+                                        <i class="bi bi-tools"></i>
                                     </div>
-                                    <h4>Photography</h4>
-                                    <p>Vestibulum ac diam sit amet quam vehicula elementum</p>
+                                    <h4>Dev Tools</h4>
+                                    <p>I rely on modern development tools to write clean code, debug efficiently, and collaborate seamlessly.</p>
                                 </div>
                             </div>
                             {{--                         
@@ -153,7 +153,7 @@
                                 </div>
                                 <div class="action-buttons">
                                     <a href="{{ route('projects') }} " class="btn btn-primary">View My Work</a>
-                                    <a href="#" class="btn btn-outline">Download Resume</a>
+                                    <a href="{{ route('downloadpdf') }}" class="btn btn-outline">Download Resume</a>
                                 </div>
                             </div>
 

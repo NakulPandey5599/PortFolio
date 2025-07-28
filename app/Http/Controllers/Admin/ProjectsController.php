@@ -82,8 +82,10 @@ class ProjectsController extends Controller
     function edit($project_id)
     {
 
-        $project = Project::where('id', $project_id)->first();
+            $project = Project::where('id', $project_id)->first();
         return view('admin.pages.projects.edit', ['project' => $project]);
+
+        
     }       
 
     function update(Request $request)

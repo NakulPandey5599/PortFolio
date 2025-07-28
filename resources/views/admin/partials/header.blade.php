@@ -17,7 +17,7 @@
                 >
               </div>
             </div> --}}
-            <div class="d-flex align-items-center justify-content-between">
+            {{-- <div class="d-flex align-items-center justify-content-between">
               <a
                 href="https://www.bootstrapdash.com/product/skydash-admin-template/"
                 ><i class="ti-home me-3 text-white"></i
@@ -25,7 +25,7 @@
               <button id="bannerClose" class="btn border-0 p-0">
                 <i class="ti-close text-white"></i>
               </button>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
@@ -35,10 +35,10 @@
           class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start"
         >
           <a class="navbar-brand brand-logo me-5" href="index.html"
-            ><img src="assets/images/logo.svg" class="me-2" alt="logo"
+            ><img src={{ asset("assets/images/logo.svg") }}class="me-2" alt="logo"
           /></a>
           <a class="navbar-brand brand-logo-mini" href="index.html"
-            ><img src="assets/images/logo-mini.svg" alt="logo"
+            ><img src={{ asset("assets/images/logo-mini.svg")}} alt="logo"
           /></a>
         </div>
         <div

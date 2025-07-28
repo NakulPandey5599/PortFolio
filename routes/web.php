@@ -27,14 +27,15 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/browsepdf', [PageController::class, 'pdfinbrowser'])->name('pdfinbrowser');
 Route::get('/downloadpdf', [PageController::class, 'downloadpdf'])->name('downloadpdf');
 Route::get('/test', [PageController::class, 'test'])->name('test');
-Route::get('/project-details', [PageController::class, 'project_details'])->name('project_details');
+Route::get('/project/{project_id}', [PageController::class, 'project_details'])->name('project_details');
 
 
+    
 //admin route
 // Route::get('/admin', [AdminController::class, 'index'])->name('index');
 
 Route::prefix('admin')->group(function () {
-    Route::get('/home', [AuthController::class, 'home']);
+    Route::get('/home', [AuthController::class, 'home'])->name('admin_home');
     Route::get('/form', [AuthController::class, 'forms']);
     Route::get('/', [AuthController::class, 'login']);
     Route::get('/register', [AuthController::class, 'register']);
