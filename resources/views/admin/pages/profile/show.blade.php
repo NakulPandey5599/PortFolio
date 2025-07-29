@@ -19,6 +19,12 @@
                                         <strong>Gender: {{$profile->gender}}</strong> 
                                     </p>
                                     <p>
+                                        <strong>Gender: {{$profile->role}}</strong> 
+                                    </p>
+                                    <p>
+                                        <strong>Gender: {{$profile->phone}}</strong> 
+                                    </p>
+                                    <p>
                                         <strong>Location:{{$profile->location}} </strong> 
                                     </p>
                                 </div>

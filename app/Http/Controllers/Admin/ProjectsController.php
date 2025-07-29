@@ -14,25 +14,25 @@ class ProjectsController extends Controller
     {
         $projects = Project::all();
 
-        foreach ($projects as $key => $project) {
+        // foreach ($projects as $key => $project) {
             
-            if (!empty($project->technologies_used) && $project->technologies_used != null) {
-                $decoded = json_decode($project->technologies_used, true);
-                if (is_array($decoded)) {
-                    $project->technologies_used = implode(', ', $decoded);
-                    $project->technologies_used_new = implode(', ', $decoded);
-                }
-            }
+        //     if (!empty($project->technologies_used) && $project->technologies_used != null) {
+        //         $decoded = json_decode($project->technologies_used, true);
+        //         if (is_array($decoded)) {
+        //             $project->technologies_used = implode(', ', $decoded);
+        //             $project->technologies_used_new = implode(', ', $decoded);
+        //         }
+        //     }
 
-            // Key Features
-            if ($project->key_features != null) {
+        //     // Key Features
+        //     if ($project->key_features != null) {
                     
-                    $key_feature = $project->key_features;
-                    $project->key_features = implode(', ', $key_feature);
-                    $project->key_features_new = implode(', ', $key_feature);
+        //             $key_feature = $project->key_features;
+        //             $project->key_features = implode(', ', $key_feature);
+        //             $project->key_features_new = implode(', ', $key_feature);
                 
-            }
-        }
+        //     }
+        // }
         // dd($projects);
         return view('admin.pages.projects.show', compact('projects'));
     }

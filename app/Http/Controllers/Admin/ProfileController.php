@@ -30,6 +30,8 @@ class ProfileController extends Controller
             'location' => 'required',
             'tagline' => 'required',
             'description' => 'required',
+            'role' => 'required',
+            'phone' => 'required'
         ]);
 
         $formFields['image'] = $request->file('image')->store('uploads', 'public');

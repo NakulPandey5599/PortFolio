@@ -60,6 +60,16 @@
                                           </span>
                                       </div>
                                   </div>
+                                  <div class="form-group">
+                                      <label for="job-role">Role</label>
+                                      <input type="text" class="form-control" id="role" name="role"
+                                          placeholder="Job Role" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPhone">Phone Number</label>
+                                      <input type="tel" class="form-control" id="exampleInputPhone" name="phone"
+                                          placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10" required>
+                                  </div>
 
                                   <div class="form-group">
                                       <label for="github">Github
