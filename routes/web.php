@@ -23,11 +23,12 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/resume', [PageController::class, 'resume'])->name('resume');
 Route::get('/projects', [PageController::class, 'projects'])->name('projects');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::get('/browsepdf', [PageController::class, 'pdfinbrowser'])->name('pdfinbrowser');
+Route::post('/contact_us', [PageController::class, 'contact_us'])->name('contact_us');
+Route::get('/browsepdf', [PageController::class, 'downloadpdf'])->name('pdfinbrowser');
 Route::get('/downloadpdf', [PageController::class, 'downloadpdf'])->name('downloadpdf');
 Route::get('/test', [PageController::class, 'test'])->name('test');
 Route::get('/project/{project_id}', [PageController::class, 'project_details'])->name('project_details');
+
 
 
     

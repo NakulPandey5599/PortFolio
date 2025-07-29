@@ -29,13 +29,21 @@
                                             <tr>
                                                 <td>{{ $project->title }}</td>
                                                 <td>
-                                                    {{ $project->technologies_used }}
+                                                    @if (is_array($project->technologies_used))
+                                                        @foreach ($project->technologies_used as $tech)
+                                                            <li>{{ $tech }}</li>
+                                                        @endforeach
+                                                    @endif
                                                 </td>
                                                 <td>{{ $project->project_overview }}</td>
                                                 <td>{{ $project->Challenges }}</td>
                                                 <td>{{ $project->solution }}</td>
                                                 <td>
-                                                    {{ $project->key_features }}
+                                                    @if (is_array($project->key_features))
+                                                        @foreach ($project->key_features as $feature)
+                                                            <li>{{ $feature }}</li>
+                                                        @endforeach
+                                                    @endif
                                                 </td>
                                                 <td>{{ $project->description }}</td>
                                                 <td style="display: flex; flex-wrap: wrap;">
@@ -54,10 +62,12 @@
                                                         class="btn btn-inverse-warning btn-fw">Edit</a>
                                                 </td>
                                                 <td>
-                                                    <form method="POST" action={{route('project.destroy', $project->id)}}>
+                                                    <form method="POST"
+                                                        action={{ route('project.destroy', $project->id) }}>
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-inverse-danger btn-fw">Delete</button>
+                                                        <button type="submit"
+                                                            class="btn btn-inverse-danger btn-fw">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>

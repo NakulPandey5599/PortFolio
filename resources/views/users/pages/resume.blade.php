@@ -167,20 +167,23 @@
             <table class="header_table">
                 <tr>
                     <td>
-                        <img src="{{ asset('assets/images2/profile.jpg') }}" alt="" class="profile_image">
+                        @if (isset($is_download) && $is_download == 1)
+                            <img src="{{ public_path('assets/images2/profile.jpg') }}" alt=""
+                                class="profile_image">
+                        @else
+                            <img src="{{ asset('assets/images2/profile.jpg') }}" alt="" class="profile_image">
+                        @endif
                     </td>
                     <td class="info">
                         <h1 class="name">{{ $profile->name }}</h1>
-                        <h3 class="role">Here is the Role</h3>
+                        <h3 class="role">{{ $profile->role }}</h3>
                         <p class="email">{{ $profile->email }}</p>
-                        <p class="phone">8976543245</p>
+                        <p class="phone">{{ $profile->phone }}</p>
                     </td>
                     <td>
-                        <ul>
-                            <li class="link">{{ $profile->linkedin }}</li>
-                            <li class="link">{{ $profile->github }}</li>
-                            <li class="link">portfolio.com</li>
-                            <li class="link">twitter.com/stevedoe</li>
+                        <ul class="social-link">
+                            <li class="link"> <a href="{{ $profile->linkedin }}"target="_blank">linkedin</a></li>
+                            <li class="link"><a href="{{ $profile->github }}"target="_blank">Github</a></li>
                         </ul>
                     </td>
                 </tr>
@@ -191,15 +194,7 @@
         <div class="about">
             <h2>Career Summary</h2>
             <hr>
-            <p>
-                Summarise your career here. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus
-                et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu. Summarise your career here. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus
-                et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu. Summarise your career here. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus
-                et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu.
-            </p>
+            <p>{{ $profile->description }}</p>
         </div>
 
         <!-- Main Content Columns -->
@@ -208,30 +203,33 @@
                 <!-- Left Column -->
                 <td style="width: 70%; vertical-align: top; ">
                     <section class="work_experience" style="">
-                        <h2>Work Experience</h2>
+                        <h2>Projects Work</h2>
                         <hr>
-                        <div class="timeline">
-                            <div class="timeline-entry">
-                                <h3>Lead Developer <span class="company">Startup Hub</span></h3>
-                                <div>2023 - Present</div>
-                                <p>Leading backend development with Laravel and MySQL. Mentoring juniors and ensuring
-                                    best practices.</p>
-                                <h4>Achievements:</h4>
-                                <ul class="achievement-list">
-                                    <li>Optimized backend load time by 40%.</li>
-                                    <li>Introduced CI/CD for staging environments.</li>
-                                    <li>Built modular service architecture.</li>
-                                </ul>
-                                <h4>Technologies Used:</h4>
-                                <ul class="tech-tags">
-                                    <li><span class="tag">Laravel</span></li>
-                                    <li><span class="tag">PHP</span></li>
-                                    <li><span class="tag">MySQL</span></li>
-                                    <li><span class="tag">Docker</span></li>
-                                    <li><span class="tag">Git</span></li>
-                                </ul>
+                        @foreach ($projects as $project)
+                            <div class="timeline">
+                                <div class="timeline-entry">
+                                    <h3>{{ $project->title }} <span class="company"></span></h3>
+                                    <div>2023 - Present</div>
+                                    <p>{{ $project->description }}</p>
+                                    <ul class="achievement-list">
+                                        <h4>Key Features:</h4>
+                                        <ul class="achievement-list">
+                                            @foreach ($project->key_features as $feature)
+                                                <li>{{ $feature }}</li>
+                                            @endforeach
+                                        </ul>
+
+                                        <h4>Technologies Used:</h4>
+                                        <ul class="tech-tags">
+                                            @foreach ($project->technologies_used as $tech)
+                                                <li><span  class="tag">{{ $tech }}</span></li>
+                                            @endforeach
+                                        </ul>
+
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                            @endforeach
                     </section>
                 </td>
 

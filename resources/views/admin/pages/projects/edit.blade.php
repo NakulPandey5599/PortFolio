@@ -20,9 +20,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="technologies-used">Technologies-Used (Comma Separated)</label>
-                                    <input type="text" class="form-control" id="technologies-used"
-                                        name='technologies_used' value=" {{ $project->technologies_used }}"
-                                        placeholder="e.g: laravel,React,etc" />
+                                    <input type="text" name="technologies_used"
+    value="{{ is_array($project->technologies_used) ? implode(', ', $project->technologies_used) : $project->technologies_used }}"
+    class="form-control" />
+
                                 </div>
                                 <div class="form-group">
                                     <label for="project-overview">Project Overview</label>
@@ -42,19 +43,19 @@
                                         value=" {{ $project->solution }}"
                                         placeholder="Explain the solution you implemented to address the challenge" />
                                 </div>
+                                <div class="form-group">
                                 <ul class="list-unstyled" id="featuresList">
-                                    @if (is_array($project->key_features))
+                                     <label for="Key Features">Key Features</label>
+                                    
                                         @foreach ($project->key_features as $feature)
-                                            <li><input type="text" class="form-control mb-2" name="key_features[]"
+                                            <li>
+                                               
+                                                <input type="text" class="form-control mb-2" name="key_features[]"
                                                     value="{{ $feature }}"
                                                     placeholder="e.g., Integrated payment gateway"></li>
                                         @endforeach
-                                    @else
-                                        <li><input type="text" class="form-control mb-2" name="key_features[]"
-                                                value="{{ $project->key_features }}"
-                                                placeholder="e.g., Integrated payment gateway"></li>
-                                    @endif
                                 </ul>
+                                </div>                           
                                 <div class="form-group">
                                     <label for="exampleTextarea1">Description</label>
                                     <textarea class="form-control" id="exampleTextarea1" name='description' rows="4">{{ old('description', $project->description) }}</textarea>

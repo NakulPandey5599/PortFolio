@@ -39,8 +39,8 @@
 
                             <div class="social-links" data-aos="fade-up" data-aos-delay="400">
                                 {{-- <a href=><i class="bi bi-twitter-x"></i></a> --}}
-                                <a href={{ "$profile->linkedin" }}><i class="bi bi-linkedin"></i></a>
-                                <a href={{ "$profile->github" }}><i class="bi bi-github"></i></a>
+                                <a href={{ "$profile->linkedin" }} target="_blank"><i class="bi bi-linkedin"></i></a>
+                                <a href={{ "$profile->github" }} target="_blank"><i class="bi bi-github"></i></a>
 
                             </div>
                         </div>
@@ -79,7 +79,8 @@
             <!-- Section Title -->
             <div class="container section-title">
                 <h2>About</h2>
-                <p>"I’m a developer who believes in writing clean code, building meaningful products, and always staying curious."</p>
+                <p>I’m a developer who believes in writing clean code, building meaningful products, and always staying
+                    curious.</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -108,24 +109,27 @@
                             <div class="skills-grid">
                                 <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
                                     <div class="skill-icon">
-                                        <i class="bi bi-window"></i>
+                                        <i class="bi bi-code-slash"></i>
                                     </div>
                                     <h4>Frontend Dev</h4>
-                                    <p>I craft visually appealing, responsive interfaces with a focus on usability and performance.</p>
+                                    <p>I craft visually appealing, responsive interfaces with a focus on usability and
+                                        performance.</p>
                                 </div>
                                 <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
                                     <div class="skill-icon">
-                                        <i class="bi bi-code-slash"></i>
+                                        <i class="bi bi-server"></i>
                                     </div>
                                     <h4>Backend Dev</h4>
-                                    <p>I build secure, scalable systems that power dynamic web experiences behind the scenes.</p>
+                                    <p>I build secure, scalable systems that power dynamic web experiences behind the
+                                        scenes.</p>
                                 </div>
                                 <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
                                     <div class="skill-icon">
                                         <i class="bi bi-tools"></i>
                                     </div>
                                     <h4>Dev Tools</h4>
-                                    <p>I rely on modern development tools to write clean code, debug efficiently, and collaborate seamlessly.</p>
+                                    <p>I rely on modern development tools to write clean code, debug efficiently, and
+                                        collaborate seamlessly.</p>
                                 </div>
                             </div>
                             {{--                         
@@ -265,7 +269,7 @@
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">AWS</span>
-                                                    <span class="skill-percentage">76%</span>
+                                                    <span class="skill-percentage"></span>
                                                 </div>
                                                 <div class="skill-bar progress">
                                                     <div class="progress-bar" role="progressbar" aria-valuenow="76"
@@ -276,18 +280,15 @@
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Docker</span>
-                                                    <span class="skill-percentage">73%</span>
+                                                    <span class="skill-percentage"></span>
                                                 </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="73"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
+
                                             </div>
 
                                             <div class="skill-item">
                                                 <div class="skill-info">
-                                                    <span class="skill-name">Git</span>
-                                                    <span class="skill-percentage">90%</span>
+                                                    <span class="skill-name"></span>
+                                                    <span class="skill-percentage"></span>
                                                 </div>
                                                 <div class="skill-bar progress">
                                                     <div class="progress-bar" role="progressbar" aria-valuenow="90"
@@ -304,8 +305,12 @@
                     <div class="col-lg-4">
                         <div class="skills-summary" data-aos="fade-left" data-aos-delay="200">
                             <h3>Professional Expertise</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <p>I’m a full-stack web developer with a strong focus on building scalable, secure, and
+                                user-focused web applications. I thrive in fast-paced, agile environments where I can take
+                                ownership of features end-to-end — from database design to clean, intuitive UIs. With
+                                practical experience in Laravel, React, and the MERN stack, I bring both speed and
+                                flexibility to development. I’m always looking for smart ways to solve real problems, move
+                                fast without breaking things, and contribute meaningfully to product growth.</p>
 
                             <div class="summary-stats">
                                 <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
@@ -313,7 +318,7 @@
                                         <i class="bi bi-trophy"></i>
                                     </div>
                                     <div class="stat-info">
-                                        <span class="stat-number">5+</span>
+                                        <span class="stat-number">0</span>
                                         <span class="stat-label">Years Experience</span>
                                     </div>
                                 </div>
@@ -323,20 +328,20 @@
                                         <i class="bi bi-diagram-3"></i>
                                     </div>
                                     <div class="stat-info">
-                                        <span class="stat-number">50+</span>
+                                        <span class="stat-number">{{ $projectCount }}</span>
                                         <span class="stat-label">Projects Completed</span>
                                     </div>
                                 </div>
 
-                                <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
+                                {{-- <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
                                     <div class="stat-circle">
                                         <i class="bi bi-people"></i>
                                     </div>
                                     <div class="stat-info">
-                                        <span class="stat-number">30+</span>
+                                        <span class="stat-number"></span>
                                         <span class="stat-label">Happy Clients</span>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <div class="skills-badges" data-aos="fade-up" data-aos-delay="600">
@@ -362,41 +367,44 @@
             <!-- Section Title -->
             <div class="container section-title">
                 <h2>Resume</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row">
-                    {{-- <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
                         <div class="experience-section">
-                            <div class="section-header"> --}}
-                                {{-- <h2><i class="bi bi-briefcase"></i> Professional Journey</h2>
-                                <p class="section-subtitle">Pellentesque habitant morbi tristique senectus et netus et
-                                    malesuada fames ac turpis egestas vestibulum tortor quam.</p>
+                            <div class="section-header">
+                                <h2><i class="bi bi-briefcase"></i> Projects</h2>
+                                <p class="section-subtitle">This section contains real code, real effort, and occasional
+                                    miracles.</p>
                             </div>
                             <div class="experience-cards">
                                 @foreach ($project as $project)
-                                <div class="experience-card" data-aos="zoom-in" data-aos-delay="300">
-                                    <div class="card-header">
-                                        <div class="role-info">
-                                            <h3>{{ $project->title }}</h3>
+                                    <div class="experience-card" data-aos="zoom-in" data-aos-delay="300">
+                                        <div class="card-header">
+                                            <div class="role-info">
+                                                <h3>{{ $project->title }}</h3>
 
+                                            </div>
+                                            <span class="duration">2022 - Present</span>
                                         </div>
-                                        <span class="duration">2022 - Present</span>
+                                        <div class="card-body">
+                                            <p>{{ Str::words($project->description, 20, '...') }}</p>
+                                        </div>
+                                        <div class="card-links">
+                                            <a href="{{ route('project_details', $project->id) }}" class="link-item">
+                                                Learn More
+                                                <i class="bi bi-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                      <p>{{ Str::words($project->description, 20, '...') }}</p>
+                                @endforeach
 
 
-                                    </div>
-                                </div>
-                                @endforeach --}}
-
-{{-- 
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
 
 
 
@@ -404,31 +412,30 @@
                         <div class="education-section">
                             <div class="section-header">
                                 <h2><i class="bi bi-mortarboard"></i> Academic Excellence</h2>
-                                <p class="section-subtitle">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean
-                                    commodo ligula eget dolor aenean massa.</p>
+                                <p class="section-subtitle">Grades weren’t everything, but I collected a few good ones
+                                    anyway.</p>
                             </div>
 
                             <div class="education-timeline">
                                 <div class="timeline-track"></div>
                                 @foreach ($educations as $education)
-                                    
-                                <div class="education-item" data-aos="slide-up" data-aos-delay="300">
-                                    <div class="timeline-marker"></div>
-                                    <div class="education-content">
-                                        <div class="degree-header">
-                                            <h3>{{ $education->degree }}</h3>
-                                            <span class="year">{{ $education->start_year }} -
-                                                {{ $education->end_year }}</span>
+                                    <div class="education-item" data-aos="slide-up" data-aos-delay="300">
+                                        <div class="timeline-marker"></div>
+                                        <div class="education-content">
+                                            <div class="degree-header">
+                                                <h3>{{ $education->degree }}</h3>
+                                                <span class="year">{{ $education->start_year }} -
+                                                    {{ $education->end_year }}</span>
+                                            </div>
+                                            <h4 class="institution">{{ $education->institution }}</h4>
+                                            <h4 class="grade">{{ $education->grade }}</h4>
+                                            <p>{{ $education->description }}</p>
                                         </div>
-                                        <h4 class="institution">{{ $education->institution }}</h4>
-                                        <h4 class="grade">{{ $education->grade }}</h4>
-                                        <p>{{ $education->description }}</p>
                                     </div>
-                                </div>
                                 @endforeach
 
 
-                                
+
 
                                 {{-- <div class="education-item" data-aos="slide-up" data-aos-delay="400">
                                 <div class="timeline-marker"></div>
@@ -463,254 +470,7 @@
 
             </div>
 
-        </section><!-- /Resume Section -->
-
-        <!-- Services Section -->
-
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio section">
-
-            <!-- Section Title -->
-            <div class="container section-title">
-                <h2>Portfolio</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-            </div><!-- End Section Title -->
-
-            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-                        <li data-filter="*" class="filter-active">
-                            <i class="bi bi-grid-3x3"></i> All Projects
-                        </li>
-                        <li data-filter=".filter-ui">
-                            UI/UX
-                        </li>
-                        <li data-filter=".filter-development">
-                            Development
-                        </li>
-                        <li data-filter=".filter-photography">
-                            Photography
-                        </li>
-                        <li data-filter=".filter-marketing">
-                            Marketing
-                        </li>
-                    </ul>
-
-                    <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
-                            <article class="portfolio-entry">
-                                <figure class="entry-image">
-                                    <img src="assets/img/portfolio/portfolio-1.webp" class="img-fluid" alt=""
-                                        loading="lazy">
-                                    <div class="entry-overlay">
-                                        <div class="overlay-content">
-                                            <div class="entry-meta">UI/UX Design</div>
-                                            <h3 class="entry-title">Mobile Banking App</h3>
-                                            <div class="entry-links">
-                                                <a href="assets/img/portfolio/portfolio-1.webp" class="glightbox"
-                                                    data-gallery="portfolio-gallery-ui"
-                                                    data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
-                                                    <i class="bi bi-arrows-angle-expand"></i>
-                                                </a>
-                                                <a href="portfolio-details.html">
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </article>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-                            <article class="portfolio-entry">
-                                <figure class="entry-image">
-                                    <img src="assets/img/portfolio/portfolio-10.webp" class="img-fluid" alt=""
-                                        loading="lazy">
-                                    <div class="entry-overlay">
-                                        <div class="overlay-content">
-                                            <div class="entry-meta">Development</div>
-                                            <h3 class="entry-title">E-Learning Platform</h3>
-                                            <div class="entry-links">
-                                                <a href="assets/img/portfolio/portfolio-10.webp" class="glightbox"
-                                                    data-gallery="portfolio-gallery-development"
-                                                    data-glightbox="title: E-Learning Platform; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
-                                                    <i class="bi bi-arrows-angle-expand"></i>
-                                                </a>
-                                                <a href="portfolio-details.html">
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </article>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
-                            <article class="portfolio-entry">
-                                <figure class="entry-image">
-                                    <img src="assets/img/portfolio/portfolio-7.webp" class="img-fluid" alt=""
-                                        loading="lazy">
-                                    <div class="entry-overlay">
-                                        <div class="overlay-content">
-                                            <div class="entry-meta">Photography</div>
-                                            <h3 class="entry-title">Urban Architecture</h3>
-                                            <div class="entry-links">
-                                                <a href="assets/img/portfolio/portfolio-7.webp" class="glightbox"
-                                                    data-gallery="portfolio-gallery-photography"
-                                                    data-glightbox="title: Urban Architecture; description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.">
-                                                    <i class="bi bi-arrows-angle-expand"></i>
-                                                </a>
-                                                <a href="portfolio-details.html">
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </article>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
-                            <article class="portfolio-entry">
-                                <figure class="entry-image">
-                                    <img src="assets/img/portfolio/portfolio-4.webp" class="img-fluid" alt=""
-                                        loading="lazy">
-                                    <div class="entry-overlay">
-                                        <div class="overlay-content">
-                                            <div class="entry-meta">Marketing</div>
-                                            <h3 class="entry-title">Social Media Campaign</h3>
-                                            <div class="entry-links">
-                                                <a href="assets/img/portfolio/portfolio-4.webp" class="glightbox"
-                                                    data-gallery="portfolio-gallery-marketing"
-                                                    data-glightbox="title: Social Media Campaign; description: Quis autem vel eum iure reprehenderit qui in ea voluptate.">
-                                                    <i class="bi bi-arrows-angle-expand"></i>
-                                                </a>
-                                                <a href="portfolio-details.html">
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </article>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
-                            <article class="portfolio-entry">
-                                <figure class="entry-image">
-                                    <img src="assets/img/portfolio/portfolio-2.webp" class="img-fluid" alt=""
-                                        loading="lazy">
-                                    <div class="entry-overlay">
-                                        <div class="overlay-content">
-                                            <div class="entry-meta">UI/UX Design</div>
-                                            <h3 class="entry-title">Smart Home Interface</h3>
-                                            <div class="entry-links">
-                                                <a href="assets/img/portfolio/portfolio-2.webp" class="glightbox"
-                                                    data-gallery="portfolio-gallery-ui"
-                                                    data-glightbox="title: Smart Home Interface; description: At vero eos et accusamus et iusto odio dignissimos ducimus.">
-                                                    <i class="bi bi-arrows-angle-expand"></i>
-                                                </a>
-                                                <a href="portfolio-details.html">
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </article>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-                            <article class="portfolio-entry">
-                                <figure class="entry-image">
-                                    <img src="assets/img/portfolio/portfolio-11.webp" class="img-fluid" alt=""
-                                        loading="lazy">
-                                    <div class="entry-overlay">
-                                        <div class="overlay-content">
-                                            <div class="entry-meta">Development</div>
-                                            <h3 class="entry-title">Cloud Management System</h3>
-                                            <div class="entry-links">
-                                                <a href="assets/img/portfolio/portfolio-11.webp" class="glightbox"
-                                                    data-gallery="portfolio-gallery-development"
-                                                    data-glightbox="title: Cloud Management System; description: Temporibus autem quibusdam et aut officiis debitis.">
-                                                    <i class="bi bi-arrows-angle-expand"></i>
-                                                </a>
-                                                <a href="portfolio-details.html">
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </article>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
-                            <article class="portfolio-entry">
-                                <figure class="entry-image">
-                                    <img src="assets/img/portfolio/portfolio-8.webp" class="img-fluid" alt=""
-                                        loading="lazy">
-                                    <div class="entry-overlay">
-                                        <div class="overlay-content">
-                                            <div class="entry-meta">Photography</div>
-                                            <h3 class="entry-title">Nature Collection</h3>
-                                            <div class="entry-links">
-                                                <a href="assets/img/portfolio/portfolio-8.webp" class="glightbox"
-                                                    data-gallery="portfolio-gallery-photography"
-                                                    data-glightbox="title: Nature Collection; description: Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">
-                                                    <i class="bi bi-arrows-angle-expand"></i>
-                                                </a>
-                                                <a href="portfolio-details.html">
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </article>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
-                            <article class="portfolio-entry">
-                                <figure class="entry-image">
-                                    <img src="assets/img/portfolio/portfolio-5.webp" class="img-fluid" alt=""
-                                        loading="lazy">
-                                    <div class="entry-overlay">
-                                        <div class="overlay-content">
-                                            <div class="entry-meta">Marketing</div>
-                                            <h3 class="entry-title">Brand Strategy</h3>
-                                            <div class="entry-links">
-                                                <a href="assets/img/portfolio/portfolio-5.webp" class="glightbox"
-                                                    data-gallery="portfolio-gallery-marketing"
-                                                    data-glightbox="title: Brand Strategy; description: Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.">
-                                                    <i class="bi bi-arrows-angle-expand"></i>
-                                                </a>
-                                                <a href="portfolio-details.html">
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </article>
-                        </div><!-- End Portfolio Item -->
-
-                    </div><!-- End Portfolio Container -->
-
-                </div>
-
-            </div>
-
-        </section><!-- /Portfolio Section -->
-
-
-        <!-- Faq Section -->
+        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="contact section light-background">
@@ -718,7 +478,7 @@
             <!-- Section Title -->
             <div class="container section-title">
                 <h2>Contact</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <p>Inbox open. Energy high. Let’s build something that breaks the internet (in a good way).</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -727,8 +487,7 @@
                     <div class="col-lg-5">
                         <div class="info-box" data-aos="fade-up" data-aos-delay="200">
                             <h3>Contact Info</h3>
-                            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum
-                                primis.</p>
+                            <p>Let’s connect! I’m just a message away.</p>
 
                             <div class="info-item" data-aos="fade-up" data-aos-delay="300">
                                 <div class="icon-box">
@@ -736,8 +495,8 @@
                                 </div>
                                 <div class="content">
                                     <h4>Our Location</h4>
-                                    <p>A108 Adam Street</p>
-                                    <p>New York, NY 535022</p>
+                                    <p>{{ $profile->location }}</p>
+
                                 </div>
                             </div>
 
@@ -747,8 +506,10 @@
                                 </div>
                                 <div class="content">
                                     <h4>Phone Number</h4>
-                                    <p>+1 5589 55488 55</p>
-                                    <p>+1 6678 254445 41</p>
+                                    <p>
+                                        {{ $profile->phone }}
+                                    </p>
+
                                 </div>
                             </div>
 
@@ -758,8 +519,8 @@
                                 </div>
                                 <div class="content">
                                     <h4>Email Address</h4>
-                                    <p>info@example.com</p>
-                                    <p>contact@example.com</p>
+                                    <p>{{ $profile->email }}</p>
+
                                 </div>
                             </div>
                         </div>
@@ -768,11 +529,11 @@
                     <div class="col-lg-7">
                         <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
                             <h3>Get In Touch</h3>
-                            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum
-                                primis.</p>
+                            <p></p>
 
-                            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-                                data-aos-delay="200">
+                            <form action="{{ route('contact_us') }}" method="POST">
+
+                                @csrf
                                 <div class="row gy-4">
 
                                     <div class="col-md-6">
@@ -795,9 +556,22 @@
                                     </div>
 
                                     <div class="col-12 text-center">
-                                        <div class="loading">Loading</div>
-                                        <div class="error-message"></div>
-                                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                                        @if (session('success'))
+                                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                {{ session('success') }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                        @endif
+
+                                        @if (session('error'))
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                {{ session('error') }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                        @endif
+
 
                                         <button type="submit" class="btn">Send Message</button>
                                     </div>
