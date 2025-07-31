@@ -21,9 +21,9 @@
                                     <span class="stat-label">Projects Completed</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="0"
-                                        data-purecounter-duration="2">0</span>
-                                    <span class="stat-label">Years Experience</span>
+                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{$certificationCount}}"
+                                        data-purecounter-duration="2"></span>
+                                    <span class="stat-label">Certification</span>
                                 </div>
                                 {{-- <div class="stat-item">
                                 <span class="purecounter" data-purecounter-start="0" data-purecounter-end="98"
@@ -62,7 +62,7 @@
                                     <span>Creative Ideas</span>
                                 </div>
                             </div>
-                            <img src="assets/img/profile/profile-square-1.webp" alt="Portfolio Hero"
+                            <img src={{asset("assets/img/profile/about.jpg")}} alt="Portfolio Hero"
                                 class="img-fluid hero-main-image">
                             <div class="image-overlay"></div>
                         </div>
@@ -90,10 +90,10 @@
                     <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
                         <div class="profile-image-wrapper">
                             <div class="profile-image">
-                                <img src="assets/img/profile/profile-square-1.webp" alt="Profile" class="img-fluid">
+                                <img src={{asset("assets/img/profile/about.jpg")}} alt="Profile" class="img-fluid">
                             </div>
                             <div class="signature-section">
-                                <img src="assets/img/misc/signature-1.webp" alt="Signature" class="signature">
+                                {{-- <img src="assets/img/misc/signature-1.webp" alt="Signature" class="signature"> --}}
                                 <p class="quote">Building meaningful digital experiences through creative code.</p>
                             </div>
                         </div>
@@ -234,8 +234,8 @@
                                 <div class="col-md-6" data-aos="flip-left" data-aos-delay="400">
                                     <div class="skill-card">
                                         <div class="skill-header">
-                                            <i class="bi bi-palette"></i>
-                                            <h3>Design &amp; Tools</h3>
+                                            <i class="bi bi-cloud"></i>
+                                            <h3>Tools &amp; DevOps</h3>
                                         </div>
                                         <div class="skills-animation">
                                             @foreach ($skills as $item)
@@ -260,7 +260,7 @@
                                 </div>
 
                                 <div class="col-md-6" data-aos="flip-left" data-aos-delay="500">
-                                    <div class="skill-card">
+                                    {{-- <div class="skill-card">
                                         <div class="skill-header">
                                             <i class="bi bi-cloud"></i>
                                             <h3>Cloud &amp; DevOps</h3>
@@ -296,7 +296,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div><!-- End DevOps Card -->
+                                    </div><!-- End DevOps Card --> --}}
                                 </div>
                             </div>
                         </div><!-- End Skills Grid -->
@@ -318,8 +318,8 @@
                                         <i class="bi bi-trophy"></i>
                                     </div>
                                     <div class="stat-info">
-                                        <span class="stat-number">0</span>
-                                        <span class="stat-label">Years Experience</span>
+                                        <span class="stat-number">{{$certificationCount}}</span>
+                                        <span class="stat-label">Certification</span>
                                     </div>
                                 </div>
 
@@ -346,11 +346,11 @@
 
                             <div class="skills-badges" data-aos="fade-up" data-aos-delay="600">
                                 <h4>Certifications</h4>
-                                <div class="badge-list">
-                                    <div class="skill-badge">AWS Certified</div>
-                                    <div class="skill-badge">Laravel Expert</div>
-                                    <div class="skill-badge">Vue.js Developer</div>
-                                    <div class="skill-badge">UI/UX Design</div>
+                                @foreach ($certifications as $certification)
+                                    <div class="badge-list">
+                                    <div class="skill-badge">{{$certification->certification}}</div>
+                                    
+                                @endforeach
                                 </div>
                             </div>
                         </div><!-- End Skills Summary -->
@@ -387,7 +387,7 @@
                                                 <h3>{{ $project->title }}</h3>
 
                                             </div>
-                                            <span class="duration">2022 - Present</span>
+                                            <span class="duration">{{ $project->date }}</span>
                                         </div>
                                         <div class="card-body">
                                             <p>{{ Str::words($project->description, 20, '...') }}</p>

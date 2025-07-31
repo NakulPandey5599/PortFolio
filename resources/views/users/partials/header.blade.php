@@ -11,7 +11,7 @@
       <nav id="navmenu" class="navmenu">
 
         <div class="profile-img">
-          <img src="assets/img/profile/profile-square-1.webp" alt="" class="img-fluid rounded-circle">
+          <img src={{asset("assets/img/profile/about.jpg")}} alt="" class="img-fluid rounded-circle">
         </div>
 
         <a href="{{route('home')}}" class="logo d-flex align-items-center justify-content-center active">

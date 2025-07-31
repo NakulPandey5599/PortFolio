@@ -6,13 +6,13 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Add Your Degree Here</h4>
-                            <form class="forms-sample"action="{{ route('education.store') }}" method="POST">
+                            <h4 class="card-title">Add Your Certification Here</h4>
+                            <form class="forms-sample"action="{{ route('certification.store') }}" method="POST">
                                 @csrf   
                                 <div class="form-group">
-                                    <label for="degree">Degree</label>
-                                    <input type="text" name="degree" id="degree" class="form-control"
-                                        placeholder="e.g., B.Tech in Computer Science" required>
+                                    <label for="degree">Certification</label>
+                                    <input type="text" name="certification" id="certification" class="form-control"
+                                        placeholder="e.g., Web development" required>
                                 </div>
 
                                 <!-- Institution / University -->
@@ -24,17 +24,12 @@
 
                                 <!-- Start Year -->
                                 <div class="form-group">
-                                    <label for="start_year">Start Year</label>
-                                    <input type="number" name="start_year" id="start_year" class="form-control"
+                                    <label for="start_year"> Year</label>
+                                    <input type="number" name="year" id="year" class="form-control"
                                         min="1950" max="2100" placeholder="e.g., 2020" required>
                                 </div>
 
-                                <!-- End Year -->
-                                <div class="form-group">
-                                    <label for="end_year">End Year</label>
-                                    <input type="number" name="end_year" id="end_year" class="form-control" min="1950"
-                                        max="2100" placeholder="e.g., 2024" required>
-                                </div>
+                               
 
                                 <!-- Grade / CGPA -->
                                 <div class="form-group">

@@ -31,7 +31,7 @@
                                             <h3>{{ $project->title }}</h3>
 
                                         </div>
-                                        <span class="duration">2022 - Present</span>
+                                        <span class="duration">{{ $project->date}}</span>
                                     </div>
                                     <div class="card-body">
                                         <p>{{ Str::words($project->description, 20, '...') }}</p>

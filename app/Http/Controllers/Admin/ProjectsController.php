@@ -58,6 +58,7 @@ class ProjectsController extends Controller
                 'project_overview' => 'nullable|string|max:500',
                 'challenges' => 'nullable|string|max:500',
                 'solution' => 'nullable|string|max:500',
+                'date' => 'nullable'
             ]);
 
             // $formFields['image'] = $request->file('image')->store('uploads', 'public');
@@ -104,6 +105,7 @@ class ProjectsController extends Controller
                 'project_overview' => 'nullable|string|max:500',
                 'challenges' => 'nullable|string|max:500',
                 'solution' => 'nullable|string|max:500',
+                'date' => 'nullable'
             ]);
 
             //    if($request->hasFile('image')){ 

@@ -19,6 +19,7 @@
                                             <th>Challenges</th>
                                             <th>solutions</th>
                                             <th>key_features</th>
+                                            <th>Year</th>
                                             <th>Description</th>
                                             <th>Image</th>
                                             <th>Github</th>
@@ -45,6 +46,7 @@
                                                         @endforeach
                                                     @endif
                                                 </td>
+                                                <td>{{ $project->date }}</td>
                                                 <td>{{ $project->description }}</td>
                                                 <td style="display: flex; flex-wrap: wrap;">
 

@@ -33,7 +33,13 @@
                                             <td> <a href="{{ route('skills.edit', $skill->id) }}"
                                                     class="btn btn-inverse-warning btn-fw">Edit</a>
                                             </td>
-                                            <td><button type="button" class="btn btn-inverse-danger btn-fw">Delete</button>
+                                            <td><form method="POST"
+                                                        action="{{ route('skills.destroy', $skill->id) }}">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="btn btn-inverse-danger btn-fw">Delete</button>
+                                                    </form>
                                             </td>
                                         </tr>
                                         @endforeach

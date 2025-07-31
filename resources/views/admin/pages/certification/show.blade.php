@@ -6,37 +6,34 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Add Your Degree and Certification Here</h4>
+                            <h4 class="card-title">See Your Certification Here</h4>
                             <p class="card-description"> 
                             </p>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Degree</th>
+                                            <th>Certifications</th>
                                             <th>Institution</th>
-                                            <th>Start Year</th>
-                                            <th>End Year</th>
+                                            <th>Year</th>
                                             <th>Description</th>
                                             
                                     </thead>
                                     <tbody>
                                         {{-- @dd($skills) --}}
-                                        @foreach ($education as $education)
+                                        @foreach ($certifications as $certification)
                                             
                                         <tr>
                                             {{-- @dd($skill->id) --}}
-                                            <td>{{ $education->degree }}</td>
-                                            <td>{{ $education->institution }}</td>
-                        
-                                            <td>{{ $education->start_year }}</td>
-                                            <td>{{ $education->end_year}}</td>
-                                            <td>{{$education->description}}</td> 
-                                            <td> <a href="{{ route('education.edit', $education->id) }}"
+                                            <td>{{ $certification->certification }}</td>
+                                            <td>{{ $certification->institution }}</td>
+                                            <td>{{ $certification->year }}</td>
+                                            <td>{{ $certification->description}}</td> 
+                                            <td> <a href="{{ route('certification.edit', $certification->id) }}"
                                                     class="btn btn-inverse-warning btn-fw">Edit</a>
                                             </td>
                                             <td><form method="POST"
-                                                        action={{ route('education.destroy', $education->id) }}>
+                                                        action={{ route('certification.destroy', $certification->id) }}>
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

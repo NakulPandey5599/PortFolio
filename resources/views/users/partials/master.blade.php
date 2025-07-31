@@ -6,6 +6,7 @@
     @include('users.partials.header')
     @yield('main')
     @include('users.partials.footer')
+
 </body>
 
 </html>

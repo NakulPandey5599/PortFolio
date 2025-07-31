@@ -17,10 +17,9 @@
                 <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
                     <div class="profile-image-wrapper">
                         <div class="profile-image">
-                            <img src="assets/img/profile/profile-square-1.webp" alt="Profile" class="img-fluid">
+                            <img src={{ asset('assets/img/profile/about.jpg') }} alt="Profile" class="img-fluid">
                         </div>
                         <div class="signature-section">
-                            <img src="assets/img/misc/signature-1.webp" alt="Signature" class="signature">
                             <p class="quote">Building meaningful digital experiences through creative code.</p>
                         </div>
                     </div>
@@ -39,24 +38,54 @@
                                     <i class="bi bi-code-slash"></i>
                                 </div>
                                 <h4>Frontend Dev</h4>
-                                <p>I craft visually appealing, responsive interfaces with a focus on usability and
-                                    performance.</p>
+                                <p>
+                                @foreach ($skills as $item)
+                                    @if ($item->categories == 0)
+                                        <div class="skill-info">
+                                            <i class= "mdi mdi-checkbox-marked-outline">
+                                                 <span class="skill-name">{{ $item->skill_name }}</span></i>
+
+                                        </div>
+                                    @endif
+                                @endforeach
+</p>
                             </div>
                             <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
                                 <div class="skill-icon">
                                     <i class="bi bi-server"></i>
                                 </div>
                                 <h4>Backend Dev</h4>
-                                <p>I build secure, scalable systems that power dynamic web experiences behind the
-                                    scenes.</p>
+
+
+                                @foreach ($skills as $item)
+                                    @if ($item->categories == 1)
+                                        <div class="skill-info">
+                                            <i class= "mdi mdi-checkbox-marked-outline">
+                                                 <span class="skill-name">{{ $item->skill_name }}</span></i>
+
+                                        </div>
+                                    @endif
+                                @endforeach
+
+
+
                             </div>
                             <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
                                 <div class="skill-icon">
                                     <i class="bi bi-tools"></i>
                                 </div>
                                 <h4>Dev Tools</h4>
-                                <p>I rely on modern development tools to write clean code, debug efficiently, and
-                                    collaborate seamlessly.</p>
+                                <p>
+                                @foreach ($skills as $item)
+                                    @if ($item->categories == 2)
+                                        <div class="skill-info">
+                                            <i class= "mdi mdi-checkbox-marked-outline">
+                                                 <span class="skill-name">{{ $item->skill_name }}</span></i>
+
+                                        </div>
+                                    @endif
+                                @endforeach
+</p>
                             </div>
                         </div>
 

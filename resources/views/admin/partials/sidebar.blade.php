@@ -82,5 +82,39 @@
                 </ul>
             </div>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#certification" aria-expanded="false"
+                aria-controls="certification">
+                <i class="icon-grid-2 menu-icon"></i>
+                <span class="menu-title">Certification</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="certification">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('certification.show')}}">Show</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('certification.create')}}">Add</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#contacts" aria-expanded="false"
+                aria-controls="contacts">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Contact</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="contacts">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('contact.show')}}" >Show</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
     </ul>
 </nav>

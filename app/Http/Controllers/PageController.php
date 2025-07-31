@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
 use App\Models\Skills;
+use App\Models\Contact;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Education;
 use Illuminate\Http\Request;
+use App\Models\Certification;
 use Barryvdh\DomPDF\Facade\Pdf;
 use PhpParser\Node\Stmt\TryCatch;
 use Illuminate\Support\Facades\View;
@@ -29,11 +30,13 @@ class PageController extends Controller
     public function home()
     {
         $projectCount = Project::count();
+        $certificationCount = Certification::count();
         $profile = Profile::first();
         $educations = Education::all();
         $skills = Skills::all();
         $project = Project::all();
-        return view('users.pages.home', compact('projectCount', 'profile', 'educations', 'skills', 'project'));
+        $certifications = Certification::all();
+        return view('users.pages.home', compact('projectCount', 'profile', 'educations', 'skills', 'project','certifications','certificationCount'));
     }
 
     public function about(){
@@ -79,7 +82,8 @@ class PageController extends Controller
         $skills = Skills::all();
         $profile = Profile::first();
         $educations = Education::all();
-        return view('users.pages.resume', compact('skills', 'projects', 'profile', 'educations'));
+        $certifications = Certification::all();
+        return view('users.pages.resume', compact('skills', 'projects', 'profile', 'educations','certifications'));
     }
 
     public function pdfinbrowser()
@@ -89,7 +93,7 @@ class PageController extends Controller
         $profile = Profile::first();
         $educations = Education::all();
         $is_download = 0;
-        $pdf = Pdf::loadView('users.pages.resume');
+        $pdf = Pdf::loadView('users.pages.test');
         $pdf->setPaper([0, 0, 612, 1200], 'portrait');
         return $pdf->stream('resume.pdf');
     }
@@ -99,14 +103,15 @@ class PageController extends Controller
     {
         $segments = request()->segments();
         $lastSegment = end($segments);
-        $project = Project::all();
+        $projects = Project::all();
         $skills = Skills::all();
         $profile = Profile::first();
         $educations = Education::all();
+        $certifications = Certification::all();
         $is_download = 1;
-        $pdf = Pdf::loadView('users.pages.resume', compact('skills', 'project', 'profile', 'educations', 'is_download'));
+        $pdf = Pdf::loadView('users.pages.test', compact('skills', 'projects', 'profile', 'educations', 'is_download','certifications'));
         // return $pdf->download('downloadedresume.pdf');
-        $pdf->setPaper([0, 0, 612, 1200], 'portrait');
+        $pdf->setPaper([0, 0, 700, 1200], 'portrait');
         if ($lastSegment == 'browsepdf') {
             return $pdf->stream('resume.pdf');
         } else {
@@ -114,13 +119,6 @@ class PageController extends Controller
         }
     }
 
-    function test()
-    {
-        return view('users.pages.test');
-
-        //      $pdf = Pdf::loadView('users.pages.test');
-        //      return $pdf->stream('resume.pdf');
-    }
 
     public function project_details($project_id)
     {
