@@ -1,2 +1,0 @@
-<x-contact/>
-<x-layout/>

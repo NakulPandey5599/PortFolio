@@ -11,11 +11,12 @@
                                 @csrf
 
                                 <div class="form-group">
+                                
                                     <label for="exampleInputUsername1">Skill Name</label>
                                     <input type="text" class="form-control" name="skill_name" id="exampleInputUsername1"
                                         placeholder="e.g., Laravel" />
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="level">Categories</label>
                                     <select name="categories" id="level" class="form-control">
@@ -39,7 +40,7 @@
                                     <input type="number" name="experience_years" id="experience_years" class="form-control"
                                         min="0" max="50" placeholder="e.g., 2">
                                 </div>
-                                
+
                                 <div class="form-check">
 
                                 </div>

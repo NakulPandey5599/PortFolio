@@ -50,12 +50,17 @@ class EducationsController extends Controller
             'start_years' => 'required',
             'end_year' => 'required',
             'grade'=>'required',
-            'description'=>'required'
+            'description'=>'nullable'
         ]);
 
       Education::where('id', $request->education_id)->update($formFields);
 
         return redirect('/admin/home')->with('success', 'education updated successfully!');
         
+    }
+    public function destroy($id){
+        $education = Education::findorfail($id);
+        $education->delete();
+        return redirect()->back();
     }
 }

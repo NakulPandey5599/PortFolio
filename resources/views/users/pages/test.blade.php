@@ -11,24 +11,27 @@
             margin: 0;
             padding: 0;
             font-size: 12pt;
-            color: #333;
+            color: #434E5E;
         }
 
         .container {
-            width: 95%;
-            max-width: 800px;
+            width: 100%;
+            max-width: 950px;
             margin: 20px auto;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-section {
-            background: #434E5E
+            background: #434E5E;
+            height: 200px;
+
         }
 
         .profile_image {
             width: 200px;
-            height: auto;
+            height: 200px;
+            object-fit: cover;
         }
 
         .name,
@@ -44,7 +47,8 @@
         }
 
         .header_table {
-            width: 100%;
+
+            width: 750+px;
             border-collapse: collapse;
         }
 
@@ -59,6 +63,13 @@
         }
 
         .work_experience {
+            margin: 20px;
+        }
+
+        .skills,
+        .education,
+        .language,
+        .certification {
             margin: 20px;
         }
 
@@ -138,11 +149,33 @@
             box-shadow: 0 0 0 2px #434E5E;
         }
 
+        .info {
+            padding-left: 10px
+        }
+
         footer {
             text-align: center;
             margin: 20px 0;
         }
-        
+
+        .icon-link {
+            text-decoration: none;
+            font-weight: 500;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .icon-link:hover {
+            color: #007bff;
+        }
+        .link2{
+            
+           padding: 4px 8px;
+            margin-right: 6px;
+            border-radius: 4px;
+            display: inline-block;
+             font-size: 10pt;
+        }
     </style>
 </head>
 
@@ -153,20 +186,23 @@
             <table class="header_table">
                 <tr>
                     <td>
-                        <img src="{{ public_path('assets/images2/profile.jpg') }}" alt="" class="profile_image">
+                        @if (isset($is_download) && $is_download == 1)
+                            <img src="{{ public_path('assets/img/profile/about.jpg') }}" alt=""
+                                class="profile_image">
+                        @else
+                            <img src={{ asset('assets/img/profile/about.jpg') }} alt="" class="profile_image">
+                        @endif
+                    </td>
+                    <td class="info">
+                        <h1 class="name">{{ $profile->name }}</h1>
+                        <h3 class="role">{{ $profile->role }}</h3>
+                        <p class="email">{{ $profile->email }}</p>
+                        <p class="phone">{{ $profile->phone }}</p>
                     </td>
                     <td>
-                        <h1 class="name">The Name</h1>
-                        <h3 class="role">Here is the Role</h3>
-                        <p class="email">xyz@gmail.com</p>
-                        <p class="phone">8976543245</p>
-                    </td>
-                    <td>
-                        <ul>
-                            <li class="link">linkedin.com/in/stevedoe</li>
-                            <li class="link">github.com/stevedoe</li>
-                            <li class="link">portfolio.com</li>
-                            <li class="link">twitter.com/stevedoe</li>
+                        <ul class="social-link">
+                            <li class="link"> <a href="{{ $profile->linkedin }}"target="_blank">linkedin</a></li>
+                            <li class="link"><a href="{{ $profile->github }}"target="_blank">Github</a></li>
                         </ul>
                     </td>
                 </tr>
@@ -177,68 +213,83 @@
         <div class="about">
             <h2>Career Summary</h2>
             <hr>
-            <p>
-                Summarise your career here. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus
-                et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu.
-            </p>
+            <p>{{ $profile->description }}</p>
         </div>
 
         <!-- Main Content Columns -->
         <table width="100%" style="border-collapse: collapse;">
             <tr>
                 <!-- Left Column -->
-                <td style="width: 75%; vertical-align: top; ">
+                <td style="width: 70%; vertical-align: top; ">
                     <section class="work_experience" style="">
-                        <h2>Work Experience</h2>
+                        <h2>Projects Work</h2>
                         <hr>
-                        <div class="timeline">
-                            <div class="timeline-entry">
-                                <h3>Lead Developer <span class="company">Startup Hub</span></h3>
-                                <div>2023 - Present</div>
-                                <p>Leading backend development with Laravel and MySQL. Mentoring juniors and ensuring best practices.</p>
-                                <h4>Achievements:</h4>
-                                <ul class="achievement-list">
-                                    <li>Optimized backend load time by 40%.</li>
-                                    <li>Introduced CI/CD for staging environments.</li>
-                                    <li>Built modular service architecture.</li>
-                                </ul>
-                                <h4>Technologies Used:</h4>
-                                <ul class="tech-tags">
-                                    <li><span class="tag">Laravel</span></li>
-                                    <li><span class="tag">PHP</span></li>
-                                    <li><span class="tag">MySQL</span></li>
-                                    <li><span class="tag">Docker</span></li>
-                                    <li><span class="tag">Git</span></li>
-                                </ul>
+                        @foreach ($projects as $project)
+                            <div class="timeline">
+                                <div class="timeline-entry">
+                                    <h3>{{ $project->title }} <span class="company"></span></h3>
+                                    <div>{{ $project->date }}</div>
+                                    <p>{{ $project->description }}</p>
+                                    <ul class="achievement-list">
+                                        <h4>Key Features:</h4>
+                                        <ul class="achievement-list">
+                                            @foreach ($project->key_features as $feature)
+                                                <li>{{ $feature }}</li>
+                                            @endforeach
+                                        </ul>
+
+                                        <h4>Technologies Used:</h4>
+                                        <ul class="tech-tags">
+                                            @foreach ($project->technologies_used as $tech)
+                                                <li><span class="tag">{{ $tech }}</span></li>
+                                            @endforeach
+                                        </ul>
+
+                                    </ul>
+                                    <ul class="link2">
+
+                                        <li><span><a href=" {{ $project->live_link }}" target="_blank"
+                                                    class="icon-link">Live link</a></span></li>
+                                        <li><span><a href="{{ $project->github }}" target="_blank"
+                                                    class="icon-link">GitHub</a></span></li>
+
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     </section>
                 </td>
 
                 <!-- Right Column -->
-                <td style="width: 25%; vertical-align: top; padding-left: 2%;">
+                <td style="width: 30%; vertical-align: top; padding-left: 2%;">
                     <section class="skills">
                         <h2>Skills</h2>
                         <hr>
-                        <h4>Frontend</h4>
+                        <h4 style="margin-bottom: 10px;">Frontend</h4>
                         <ul>
-                            <li>React</li>
-                            <li>Vue.js</li>
-                            <li>JavaScript</li>
-                            <li>HTML/CSS</li>
+                            @foreach ($skills as $item)
+                                @if ($item->categories == 0)
+                                    <li>{{ $item->skill_name }}</li>
+                                @endif
+                            @endforeach
+
+
                         </ul>
-                        <h4>Backend</h4>
+                        <h4 style="margin-bottom: 10px;">Backend</h4>
                         <ul>
-                            <li>Laravel / PHP</li>
-                            <li>Node.js</li>
-                            <li>MySQL</li>
+                            @foreach ($skills as $item)
+                                @if ($item->categories == 1)
+                                    <li>{{ $item->skill_name }}</li>
+                                @endif
+                            @endforeach
                         </ul>
-                        <h4>Dev Tools</h4>
+                        <h4 style="margin-bottom: 10px;">Dev Tools</h4>
                         <ul>
-                            <li>Docker</li>
-                            <li>Git</li>
-                            <li>Postman</li>
+                            @foreach ($skills as $item)
+                                @if ($item->categories == 2)
+                                    <li>{{ $item->skill_name }}</li>
+                                @endif
+                            @endforeach
                         </ul>
                     </section>
 
@@ -246,8 +297,25 @@
                         <h2>Education</h2>
                         <hr>
                         <ul>
-                            <li>MSc in Computer Science<br>University College London<br>2013 - 2014</li>
-                            <li>BSc in IT<br>Imperial College London<br>2010 - 2013</li>
+                            @foreach ($educations as $education)
+                                <li>
+                                    <span style="font-weight: bold; ">{{ $education->degree }}</span><br>
+                                    <span style="font-style: color: #adb5bd;">{{ $education->institution }}</span><br>
+                                    <span style="color: gray;">{{ $education->end_year }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </section>
+
+                    <section class="certification">
+                        <h2>Certification</h2>
+                        <hr>
+                        <ul>
+                            @foreach ($certifications as $certification)
+                                <li><span class="tag"> {{ $certification->certification }} </span></li>
+                            @endforeach
+
+
                         </ul>
                     </section>
 
@@ -255,18 +323,9 @@
                         <h2>Languages</h2>
                         <hr>
                         <ul>
-                            <li>English (Native)</li>
-                            <li>French (Professional)</li>
-                        </ul>
-                    </section>
-
-                    <section class="interest">
-                        <h2>Interests</h2>
-                        <hr>
-                        <ul>
-                            <li>Climbing</li>
-                            <li>Photography</li>
-                            <li>Gaming</li>
+                            <li>English</li>
+                            <li></li>
+                            <li></li>
                         </ul>
                     </section>
                 </td>

@@ -37,8 +37,8 @@ class SkillsController extends Controller
 
         
     }
-    function edit($skills_id) {
-         $skill = Skills::where('id', $skills_id)->first();
+    function edit($id) {
+         $skill = Skills::where('id', $id)->first();
         return view ('admin.pages.skills.edit', ['skill'=>$skill]);
         
     }
@@ -57,8 +57,16 @@ class SkillsController extends Controller
 
         } catch (\Throwable $th) {
             return $th;
+        }    
+    }
+    public function destroy($id){
+        try {
+            $skill = Skills::findorfail($id);
+        $skill->delete();
+         return redirect()->back()->with('success', 'Skill deleted successfully.');
+        } catch (\Throwable $th) {
+        return $th;
         }
-                
         
     }
 }

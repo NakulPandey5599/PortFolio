@@ -55,7 +55,12 @@
                                                     placeholder="e.g., Integrated payment gateway"></li>
                                         @endforeach
                                 </ul>
-                                </div>                           
+                                </div> 
+                                <div class="form-group">
+                                    <label for="start_year">Start Year</label>
+                                    <input type="number" value="{{$project->date}}" name="start_year" id="start_year" class="form-control"
+                                        min="1950" max="2100" placeholder="e.g., 2020" required>
+                                </div>                          
                                 <div class="form-group">
                                     <label for="exampleTextarea1">Description</label>
                                     <textarea class="form-control" id="exampleTextarea1" name='description' rows="4">{{ old('description', $project->description) }}</textarea>

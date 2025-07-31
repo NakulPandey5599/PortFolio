@@ -23,6 +23,15 @@
 
   <!-- Main CSS File -->
   <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+  
+  <link
+      rel="stylesheet"
+      href="{{asset('assets/vendor/mdi/css/materialdesignicons.min.css')}}"
+
+    />
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 
   <!-- =======================================================
   * Template Name: Style

@@ -1,2 +1,0 @@
-<x-about/>
-<x-layout/>

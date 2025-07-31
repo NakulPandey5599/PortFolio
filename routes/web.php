@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\Admin\AuthController;
-use App\Http\Controllers\Admin\EducationsController;
-use App\Http\Controllers\Admin\ProfileController;
-use App\Http\Controllers\Admin\ProjectsController;
-use App\Http\Controllers\Admin\SkillsController;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
-use Illuminate\Auth\Events\Login;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\SkillsController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ProjectsController;
+use App\Http\Controllers\Admin\EducationsController;
+use App\Http\Controllers\Admin\CertificationController;
+use App\Http\Controllers\Admin\ContactController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -58,6 +60,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/store', [SkillsController::class, 'store'])->name('skills.store');
         Route::get('/edit/{id}', [SkillsController::class, 'edit'])->name('skills.edit');
         Route::put('/update', [SkillsController::class, 'update'])->name('skills.update');
+        Route::delete('/delete/{id}', [SkillsController::class, 'destroy'])->name('skills.destroy');
 
     });
 
@@ -76,7 +79,24 @@ Route::prefix('admin')->group(function () {
         Route::post('/store', [EducationsController::class, 'store'])->name('education.store');
         Route::get('/edit/{id}', [EducationsController::class, 'edit'])->name('education.edit');
         Route::put('/update', [EducationsController::class, 'update'])->name('education.update');
+        Route::delete('/delete/{id}', [EducationsController::class, 'destroy'])->name('education.destroy');
     });
+
+    Route::prefix('/certification')->group(function (){
+        Route::get('/', [CertificationController::class, 'index'])->name('certification.show');
+        Route::get('/create', [CertificationController::class, 'create'])->name('certification.create');
+        Route::post('/store', [CertificationController::class, 'store'])->name('certification.store');
+        Route::get('/edit/{id}', [CertificationController::class, 'edit'])->name('certification.edit');
+        Route::put('/update', [CertificationController::class, 'update'])->name('certification.update');
+        Route::delete('/delete/{id}', [CertificationController::class, 'destroy'])->name('certification.destroy');
+    });
+
+    Route::prefix('/contacts')->group(function (){
+        Route::get('/', [ContactController::class, 'index'])->name('contact.show');
+        // Route::delete('/delete/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
+     });
+
+    
     
 });
 

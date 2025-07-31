@@ -45,6 +45,11 @@
                                     <button type="button" class="btn btn-inverse-primary btn-fw" onclick="addFeature()">
                                         Add Feature</button>
 
+                                    <div class="form-group">
+                                        <label for="year">Year</label>
+                                        <input type="number" name="date" id="date" class="form-control"
+                                            min="1950" max="2100" placeholder="e.g., 2020" required>
+                                    </div>
 
 
 
