@@ -70,7 +70,7 @@ class ProjectsController extends Controller
                 }
                 $formFields['images'] = $multiImagePaths;
             }
-            $formFields['technologies_used'] = explode(',', $request->input('technologies-_used'));
+            $formFields['technologies_used'] = explode(',', $request->input('technologies_used'));
 
             Project::create($formFields);
 

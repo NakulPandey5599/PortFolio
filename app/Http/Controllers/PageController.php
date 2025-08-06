@@ -111,7 +111,7 @@ class PageController extends Controller
         $is_download = 1;
         $pdf = Pdf::loadView('users.pages.test', compact('skills', 'projects', 'profile', 'educations', 'is_download','certifications'));
         // return $pdf->download('downloadedresume.pdf');
-        $pdf->setPaper([0, 0, 700, 1200], 'portrait');
+        $pdf->setPaper([0, 0, 700, 1600], 'portrait');
         if ($lastSegment == 'browsepdf') {
             return $pdf->stream('resume.pdf');
         } else {

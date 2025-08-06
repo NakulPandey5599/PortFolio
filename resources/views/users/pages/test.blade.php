@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Resume - Steve Doe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style type="text/css">
         body,
         html {
@@ -17,7 +19,7 @@
         .container {
             width: 100%;
             max-width: 950px;
-            margin: 20px auto;
+            margin:     0px auto;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -30,7 +32,7 @@
 
         .profile_image {
             width: 200px;
-            height: 200px;
+            height: 195px;
             object-fit: cover;
         }
 
@@ -56,6 +58,12 @@
             color: #adb5bd;
             margin-bottom: 20px;
             margin-left: 80px;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #adb5bd;
+            text-transform: capitalize;
         }
 
         .about {
@@ -163,18 +171,32 @@
             font-weight: 500;
             color: #333;
             font-size: 16px;
+            padding: 20px 30px;
         }
 
         .icon-link:hover {
             color: #007bff;
         }
-        .link2{
-            
-           padding: 4px 8px;
+
+        .link2 {
+
+
+            padding-left: 420px;
+
+            padding-bottom: 0px;
             margin-right: 6px;
-            border-radius: 4px;
+
             display: inline-block;
-             font-size: 10pt;
+            font-size: 10pt;
+        }
+
+        .link2a {
+            padding-right: 30px;
+        }
+
+        .project_link{
+            color: #ccc;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -193,16 +215,53 @@
                             <img src={{ asset('assets/img/profile/about.jpg') }} alt="" class="profile_image">
                         @endif
                     </td>
-                    <td class="info">
+                    <td class="info" style="padding-left: 45px">
                         <h1 class="name">{{ $profile->name }}</h1>
                         <h3 class="role">{{ $profile->role }}</h3>
                         <p class="email">{{ $profile->email }}</p>
                         <p class="phone">{{ $profile->phone }}</p>
                     </td>
                     <td>
-                        <ul class="social-link">
-                            <li class="link"> <a href="{{ $profile->linkedin }}"target="_blank">linkedin</a></li>
-                            <li class="link"><a href="{{ $profile->github }}"target="_blank">Github</a></li>
+                        <ul class="social-link" style="margin-left: 200px">
+                            <li class="link"> 
+                            {{-- <a href="{{ $profile->linkedin }}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">
+                                <img src="{{ public_path('assets/img/linkedin_128.jpg') }}" style="width: 27px;" alt=""> 
+                                <span>LinkedIn</span>
+                            </a> --}}
+                            <table style="vertical-align: middle;">
+    <tr>
+        <td style="vertical-align: middle;">
+            <img src="{{ public_path('assets/img/linkedin_123.jpg') }}" style="width: 27px; border-radius: 3px" alt="">
+        </td>
+        <td style="vertical-align: middle; padding-left: 5px;">
+            <a href="{{ $profile->linkedin }}" target="_blank" style="text-decoration: none; color: #adb5bd;">
+                LinkedIn
+            </a>
+        </td>
+    </tr>
+</table>
+
+
+                            </li>
+                            <li class="link"> 
+                                {{-- <a href="{{ $profile->github }}"target="_blank">
+                                    <img src={{ public_path('assets/img/github_128.jpg') }} 
+                                style="width: 27px; border-radius: 3px">
+                                Github
+                                </a> --}}
+                                <table style="vertical-align: middle;">
+    <tr>
+        <td style="vertical-align: middle;">
+            <img src="{{ public_path('assets/img/github_123.jpg') }}" style="width: 27px; border-radius: 3px" alt="">
+        </td>
+        <td style="vertical-align: middle; padding-left: 5px;">
+            <a href="{{ $profile->github }}" target="_blank" style="text-decoration: none; color: #adb5bd;">
+                Github
+            </a>
+        </td>
+    </tr>
+</table>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -227,7 +286,19 @@
                         @foreach ($projects as $project)
                             <div class="timeline">
                                 <div class="timeline-entry">
-                                    <h3>{{ $project->title }} <span class="company"></span></h3>
+                                    <h3>{{ $project->title }} </h3>
+                                    <span class="company">
+                                        <div class="link2" style="display: flex; gap: 15px;">
+                                            <ul class="tech-tags">
+                                            
+                                                <li><span class="tag"><a href=" {{ $project->live_link }}" target="_blank" class="project_link">Live link</a></span></li>
+                                                <li><span class="tag"><a href="{{ $project->github }}" target="_blank" class="project_link">GitHub</a></span></li>
+                                           
+                                            </ul>
+                                            
+
+                                        </div>
+                                    </span>
                                     <div>{{ $project->date }}</div>
                                     <p>{{ $project->description }}</p>
                                     <ul class="achievement-list">
@@ -246,14 +317,7 @@
                                         </ul>
 
                                     </ul>
-                                    <ul class="link2">
 
-                                        <li><span><a href=" {{ $project->live_link }}" target="_blank"
-                                                    class="icon-link">Live link</a></span></li>
-                                        <li><span><a href="{{ $project->github }}" target="_blank"
-                                                    class="icon-link">GitHub</a></span></li>
-
-                                    </ul>
                                 </div>
                             </div>
                         @endforeach
@@ -331,12 +395,6 @@
                 </td>
             </tr>
         </table>
-
-        <!-- Footer -->
-        <footer>
-            <div><a href="{{ route('pdfinbrowser') }}">View as PDF</a></div>
-            <div><a href="{{ route('downloadpdf') }}">Download</a></div>
-        </footer>
     </div>
 </body>
 

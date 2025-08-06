@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Pillar - Bootstrap Resume/CV Template for Developers</title>
+@extends('users.partials.master')
+@section('main')
+    {{-- <title>Pillar - Bootstrap Resume/CV Template for Developers</title> 
 
     <!-- Meta -->
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Responsive Resume Template">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico"> --}}
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
@@ -22,9 +20,6 @@
     <link id="theme-style" rel="stylesheet" href="{{ asset('assets/css_resume/pillar-1.css') }}">
 
 
-</head>
-
-<body>
 
     <article class="resume-wrapper text-center position-relative">
         <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
@@ -49,12 +44,12 @@
                             </div><!--//primary-info-->
                             <div class="secondary-info col-auto mt-2">
                                 <ul class="resume-social list-unstyled">
-                                    <li class="mb-3"><a class="text-link" href="{{ $profile->linkedin }}" target="_blank"><span
-                                                class="fa-container text-center me-2"><i
+                                    <li class="mb-3"><a class="text-link" href="{{ $profile->linkedin }}"
+                                            target="_blank"><span class="fa-container text-center me-2"><i
                                                     class="fa-brands fa-linkedin-in fa-fw"></i></span>Linkedin</a>
                                     </li>
-                                    <li class="mb-3"><a class="text-link" href="{{ $profile->github }}" target="_blank"><span
-                                                class="fa-container text-center me-2"><i
+                                    <li class="mb-3"><a class="text-link" href="{{ $profile->github }}"
+                                            target="_blank"><span class="fa-container text-center me-2"><i
                                                     class="fa-brands fa-github-alt fa-fw"></i></span>GitHub</a>
                                     </li>
                                     {{-- <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fa-brands fa-codepen fa-fw"></i></span>codepen.io/username/</a></li> --}}
@@ -67,10 +62,11 @@
                 </div><!--//row-->
             </header>
             <div class="resume-body p-5">
-                <section class="resume-section summary-section mb-5">
+                <section class="resume-section summary-section mb-5"
+                    style="padding-top: 0px;padding-bottom: 0px;margin-bottom: 0px;">
                     <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Career Summary</h2>
                     <div class="resume-section-content">
-                        <p class="mb-0">{{ $profile->description }} 
+                        <p class="mb-0">{{ $profile->description }}
                         </p>
                     </div>
                 </section><!--//summary-section-->
@@ -86,11 +82,24 @@
                                                 <div class="d-flex flex-column flex-md-row">
                                                     <h3 class="resume-position-title font-weight-bold mb-1">
                                                         {{ $project->title }}</h3>
-                                                    {{-- <div class="resume-company-name ms-auto">Startup Hub</div> --}}
+                                                    <div class="resume-company-name ms-auto">
+                                                        <ul class="list-inline">
+                                                            <li class="list-inline-item"style="margin-right: 20px; margin-top: 20px"> <a class="text-link" href="{{ $project->live_link }}" target="_blank"><span
+                                                                        class="fa-container text-center me-2"><i
+                                                                            class="fa-brands 	fa fa-globe fa-fw"></i></span>Live
+                                                                    link</a>
+                                                            </li>
+
+                                                            <li class="list-inline-item"style="margin-right: 20px;  margin-top: 20px"> <a class="text-link" href="{{ $project->github }}" target="_blank"><span class="fa-container text-center me-2"><i
+                                                                            class="fa-brands fa-github-alt fa-fw"></i></span>GitHub</a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
                                                 </div><!--//row-->
                                                 <div class="resume-position-time">{{ $project->date }}</div>
-                                             </div><!--//resume-timeline-item-header-->
-                                             <div class="resume-timeline-item-desc">
+                                            </div><!--//resume-timeline-item-header-->
+                                            <div class="resume-timeline-item-desc">
                                                 <p>{{ $project->description }}</p>
                                                 <h4 class="resume-timeline-item-desc-heading font-weight-bold">Key
                                                     Features:</h4>
@@ -109,18 +118,6 @@
                                                         </li>
                                                     @endforeach
                                                 </ul>
-                                            <ul class="list-inline">
-                                                    <li class="list-inline-item"> <a class="text-link" href="{{ $project->live_link }}" target="_blank"><span
-                                                class="fa-container text-center me-2"><i
-                                                    class="fa-brands 	fa fa-globe fa-fw"></i></span>Live link</a>
-                                                    </li>
-                                                
-                                                 <li class="list-inline-item"> <a class="text-link" href="{{ $project->github }}" target="_blank"><span
-                                                class="fa-container text-center me-2"><i
-                                                    class="fa-brands fa-github-alt fa-fw"></i></span>GitHub</a>
-                                                 </li>  
-                                                
-                                            </ul>
                                             </div><!--//resume-timeline-item-desc-->
 
                                         </article><!--//resume-timeline-item-->
@@ -138,7 +135,9 @@
                         </section><!--//experience-section-->
                     </div>
                     <div class="col-lg-3">
-                        <section class="resume-section skills-section mb-5">
+                        <section class="resume-section skills-section mb-5" style="
+    padding-bottom: 0px;
+">
                             <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Skills &amp;
                                 Tools</h2>
                             <div class="resume-section-content">
@@ -186,7 +185,11 @@
                                 </div><!--//resume-skill-item-->
                             </div><!--resume-section-content-->
                         </section><!--//skills-section-->
-                        <section class="resume-section education-section mb-5">
+                        <section class="resume-section education-section mb-5"
+                            style="
+    padding-bottom: 0px;
+    padding-top: 0px;
+">
                             <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Education</h2>
                             <div class="resume-section-content">
                                 <ul class="list-unstyled">
@@ -200,31 +203,42 @@
                                 </ul>
                             </div>
                         </section><!--//education-section-->
-                        <section class="resume-section reference-section mb-5">
+                        <section class="resume-section reference-section mb-5"
+                            style="
+    padding-bottom: 0px;
+    padding-top: 0px;
+">
                             <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Certification
                             </h2>
                             <div class="resume-section-content">
                                 <ul class="list-unstyled resume-awards-list">
                                     @foreach ($certifications as $certification)
                                         <li class="mb-2 ps-4 position-relative">
-                                            <div class="resume-award-name"> <span class="badge badge-light">{{ $certification->certification }} </span></div>
+                                            <div class="resume-award-name"> <span
+                                                    class="badge badge-light">{{ $certification->certification }} </span>
+                                            </div>
 
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </section><!--//interests-section-->
-                        <section class="resume-section language-section mb-5">
+                        <section class="resume-section language-section mb-5"
+                            style="
+    padding-bottom: 0px;
+    padding-top: 0px;
+">
                             <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Language</h2>
                             <div class="resume-section-content">
                                 <ul class="list-unstyled resume-lang-list">
                                     <li class="mb-2"><span class="resume-lang-name font-weight-bold">English</span>
-                                        <small class="text-muted font-weight-normal"></small></li>
-                                   
+                                        <small class="text-muted font-weight-normal"></small>
+                                    </li>
+
                                 </ul>
                             </div>
                         </section><!--//language-section-->
-                        
+
                     </div>
                 </div><!--//row-->
             </div><!--//resume-body-->
@@ -234,14 +248,7 @@
     </article>
 
 
-    <footer class="footer text-center pt-2 pb-5">
-        
-       <div><a href="{{ route('pdfinbrowser') }}">View as PDF</a></div>
-            <div><a href="{{ route('downloadpdf') }}">Download</a></div>
-    </footer>
 
-
-
-</body>
-
-</html>
+    <div><a href="{{ route('pdfinbrowser') }}">View as PDF</a></div>
+    <div><a href="{{ route('downloadpdf') }}">Download</a></div>
+@endsection
