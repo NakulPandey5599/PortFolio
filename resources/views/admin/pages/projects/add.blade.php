@@ -37,23 +37,21 @@
                                         placeholder="Explain the solution you implemented to address the challenge" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="solution">key Feature</label>
-                                    <ul class="list-unstyled" class="form-control" id="featuresList">
+                                    <label for="featureslist">key Feature</label>
+                                    <ul class="list-unstyled form-control" id="featuresList">
                                         <li><input type="text" class="form-control" name="key_features[]"
                                                 placeholder="e.g., Integrated payment gateway"></li>
                                     </ul>
                                     <button type="button" class="btn btn-inverse-primary btn-fw" onclick="addFeature()">
                                         Add Feature</button>
-
-                                    <div class="form-group">
+                                </div>
+                                
+                                <div class="form-group">
                                         <label for="year">Year</label>
                                         <input type="number" name="date" id="date" class="form-control"
                                             min="1950" max="2100" placeholder="e.g., 2020" required>
                                     </div>
 
-
-
-                                </div>
                                 <div class="form-group">
                                     <label for="exampleTextarea1">Description</label>
                                     <textarea class="form-control" id="exampleTextarea1" name='description' rows="4"></textarea>

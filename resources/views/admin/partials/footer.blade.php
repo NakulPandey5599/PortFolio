@@ -26,7 +26,7 @@
     function addFeature() {
       const ul = document.getElementById('featuresList');
       const li = document.createElement('li');
-      li.innerHTML = `<input type="text" class="form-control"  name="features[]" placeholder="Enter feature">`;
+      li.innerHTML = `<input type="text" class="form-control"  name="key_features[]" placeholder="Enter key features">`;
       ul.appendChild(li);
     }
   </script>

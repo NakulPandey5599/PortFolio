@@ -54,7 +54,10 @@
                                                     value="{{ $feature }}"
                                                     placeholder="e.g., Integrated payment gateway"></li>
                                         @endforeach
+                                        
                                 </ul>
+                                <button type="button" class="btn btn-inverse-primary btn-fw" onclick="addFeature()">
+                                        Add Feature</button>
                                 </div> 
                                 <div class="form-group">
                                     <label for="start_year">Start Year</label>
