@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Education;
+use App\Models\Experience;
 use Illuminate\Http\Request;
 use App\Models\Certification;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -108,10 +109,11 @@ class PageController extends Controller
         $profile = Profile::first();
         $educations = Education::all();
         $certifications = Certification::all();
+        $experiences = Experience::all();
         $is_download = 1;
-        $pdf = Pdf::loadView('users.pages.test', compact('skills', 'projects', 'profile', 'educations', 'is_download','certifications'));
+        $pdf = Pdf::loadView('users.pages.test', compact('skills', 'projects', 'profile', 'educations', 'is_download','certifications','experiences'));
         // return $pdf->download('downloadedresume.pdf');
-        $pdf->setPaper([0, 0, 700, 1600], 'portrait');
+        $pdf->setPaper([0, 0, 700, 2200], 'portrait');
         if ($lastSegment == 'browsepdf') {
             return $pdf->stream('resume.pdf');
         } else {

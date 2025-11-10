@@ -5,12 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\SkillsController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\EducationsController;
 use App\Http\Controllers\Admin\CertificationController;
-use App\Http\Controllers\Admin\ContactController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -96,7 +97,10 @@ Route::prefix('admin')->group(function () {
         // Route::delete('/delete/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
      });
 
-    
+    Route::get('/experience', [ExperienceController::class, 'index'])->name('experience.index');
+    Route::post('/experience/store', [ExperienceController::class, 'store'])->name('experience.store');
+
+
     
 });
 
