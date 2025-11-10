@@ -29,6 +29,28 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#profileMenu" aria-expanded="false"
+                aria-controls="profileMenu">
+                <i class="icon-layout menu-icon"></i>
+                <span class="menu-title">Work Experience</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="profileMenu">
+                <ul class="nav flex-column sub-menu">
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="/admin/profile">Show</a>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('experience.index')}}">Add</a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="/admin/profile/edit">Edit</a>
+                    </li> --}}
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#projectMenu" aria-expanded="false"
                 aria-controls="projectMenu">
                 <i class="icon-layout menu-icon"></i>

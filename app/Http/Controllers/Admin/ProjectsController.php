@@ -49,7 +49,7 @@ class ProjectsController extends Controller
                 'title' => 'required',
                 // 'image' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
                 'images.*' => 'image|mimes:jpg,jpeg,png|max:2048',
-                'github' => 'required|url',
+                'github' => 'nullable|url',
                 'live_link' => 'required|url',
                 'description' => 'required',
                 'key_features' => 'required|array',
